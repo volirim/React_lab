@@ -1,0 +1,32 @@
+.nav-container {
+  width: 30em;
+}
+
+.menu {
+  display: flex;
+  height: 100%;
+  margin: 0;
+}
+
+.menu__item {
+  color: #dadad9;
+  text-decoration: none;
+  flex-grow: 1;
+  height: 100%;
+  text-align: center;
+  line-height: 96px;
+}
+
+.menu__item:hover {
+  background-color: #272727;
+}
+
+.menu__item:active {
+  // background: linear-gradient(180deg, rgba(39, 39, 39, 1) 47%, rgba(18, 18, 18, 1) 100%);
+  background: #fff;
+}
+
+.active {
+  background-color: #272727;
+  border-bottom: 5px solid #9933cc;
+}
