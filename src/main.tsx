@@ -1,7 +1,7 @@
 import "./styles/main.css";
 import "./styles/main.scss";
 import "./components/header/header.scss";
-import "./components/header/menu.scss";
+import "./components/header/modules/navMenu/menu.scss";
 import "./components/footer/footer.scss";
 import "./components/main/mainPage.scss";
 // watch: native intellisense and file-peek for aliases from jsconfig.json and with none-js files doesn't work: https://github.com/microsoft/TypeScript/issues/29334

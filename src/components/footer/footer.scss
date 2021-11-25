@@ -1,35 +1,11 @@
+@import url("./modules/footerLinks.scss");
+@import url("./modules/footerTitle.scss");
+
 .footer-container {
-  height: 96px;
+  padding: 2% 0;
+  flex-shrink: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #121212;
-}
-
-.footer__title {
-  font-size: 22pt;
-  font-weight: bold;
-  margin-left: 5%;
-  color: #dadad9;
-  background-color: #121212;
-}
-
-.footer__images-block {
-  width: 35em;
-  display: flex;
-  justify-content: space-around;
-}
-
-.footer__img {
-  height: 50px;
-  transition: 0.2s;
-}
-
-.footer__img:hover {
-  height: 45px;
-  transition: 0.2s;
-}
-
-.footer__img:active {
-  height: 55px;
 }

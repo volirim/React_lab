@@ -1,0 +1,22 @@
+.footer__images-block {
+  width: 35em;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footer__img {
+  width: 100%;
+  max-width: 150px;
+  max-height: 47.7px;
+  transition: 0.2s;
+}
+
+.footer__img:hover {
+  max-width: 130px;
+  transition: 0.2s;
+}
+
+.footer__img:active {
+  max-width: 170px;
+}

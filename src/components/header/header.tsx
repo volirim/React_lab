@@ -1,4 +1,4 @@
-import Menu from "./menu";
+import Menu from "./modules/navMenu/menu";
 
 const Header: React.FC = function () {
   return (
