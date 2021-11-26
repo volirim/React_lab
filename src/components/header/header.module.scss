@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #dadad9;
+  background-color: #121212;
+}
+
+.title {
+  line-height: 96px;
+  margin-left: 5%;
+}
