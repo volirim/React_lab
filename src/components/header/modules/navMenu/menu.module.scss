@@ -1,4 +1,4 @@
-.nav-container {
+.container {
   width: 30em;
 }
 
@@ -8,7 +8,7 @@
   margin: 0;
 }
 
-.menu__item {
+.item {
   color: #dadad9;
   text-decoration: none;
   flex-grow: 1;
@@ -17,11 +17,11 @@
   line-height: 96px;
 }
 
-.menu__item:hover {
+.item:hover {
   background-color: #272727;
 }
 
-.menu__item:active {
+.item:active {
   background: linear-gradient(180deg, rgba(39, 39, 39, 1) 47%, rgba(18, 18, 18, 1) 100%);
 }
 
