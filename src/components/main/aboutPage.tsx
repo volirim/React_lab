@@ -1,3 +1,5 @@
+import "./mainPage.scss";
+
 const About: React.FC = function () {
   return <p className="main-container">About</p>;
 };

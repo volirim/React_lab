@@ -14,13 +14,15 @@ import About from "./components/main/aboutPage";
 import Products from "./components/main/productsPage";
 import SignIn from "./components/main/signInPage";
 import SignUp from "./components/main/signUpPage";
+import Search from "./components/search/search";
 
 class App extends React.Component {
   render() {
     return (
-      <ErrorBoundary>
-        <>
-          <Header />
+      <>
+        <Header />
+        <Search />
+        <ErrorBoundary>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -29,9 +31,9 @@ class App extends React.Component {
             <Route path="/register" element={<SignUp />} />
             <Route path="*" element={<Navigate to="/" />} />;
           </Routes>
-          <Footer />
-        </>
-      </ErrorBoundary>
+        </ErrorBoundary>
+        <Footer />
+      </>
     );
   }
 }
