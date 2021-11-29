@@ -1,7 +1,9 @@
+import { useParams } from "react-router";
 import "./mainPage.scss";
 
 const Products: React.FC = function () {
-  return <p className="main-container">Products</p>;
+  const { id } = useParams();
+  return <p className="main-container">Products {id}</p>;
 };
 
 export default Products;

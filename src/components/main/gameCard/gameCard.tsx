@@ -1,18 +1,18 @@
 import card from "./game.module.scss";
+import ApiObject from "@/types/Mockapi";
 
-const GameCard = function () {
+const GameCard = function (props: ApiObject) {
   return (
     <div className={card.card}>
       <div className={card.side}>
         <div>
-          <div>asd</div>
-          <div>24.99</div>
+          <div>{props.name}</div>
+          <div>{props.price}</div>
         </div>
-        <div>rating</div>
+        <div>{props.rating}</div>
       </div>
       <div className={`${card.side} ${card.back}`}>
-        <div>descriptionasdasdajsdjasjdjasjdjasdjdjasasdjdjasjsadjasjsdajjsajasjdasj</div>
-        // eslint-disable-next-line react/button-has-type
+        <div>{props.description}</div>
         <button>Add to cart</button>
       </div>
     </div>

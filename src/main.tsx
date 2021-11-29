@@ -5,6 +5,8 @@ import ErrorBoundary from "./components/error/error";
 
 import "./styles/main.css";
 import "./styles/main.scss";
+
+import getGamesData from "./api/mockapiData";
 // watch: native intellisense and file-peek for aliases from jsconfig.json and with none-js files doesn't work: https://github.com/microsoft/TypeScript/issues/29334
 
 import Header from "./components/header/header";
@@ -26,7 +28,9 @@ class App extends React.Component {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/products" element={<Products />} />
+            <Route path="/products/:id" element={<Products />} />
+            <Route path="/products/:id" element={<Products />} />
+            <Route path="/products/:id" element={<Products />} />
             <Route path="/login" element={<SignIn />} />
             <Route path="/register" element={<SignUp />} />
             <Route path="*" element={<Navigate to="/" />} />;
@@ -38,24 +42,7 @@ class App extends React.Component {
   }
 }
 
-// const App: React.FC = function () {
-//   return (
-//     <>
-//       <Header />
-//       <Routes>
-//         <Route path="/" element={<Home />} />
-//         <Route path="/about" element={<About />} />
-//         <Route path="/products" element={<Products />} />
-//         <Route path="/login" element={<SignIn />} />
-//         <Route path="/register" element={<SignUp />} />
-//         <Route path="*" element={<Home />} />
-//       </Routes>
-//       <Footer />
-//     </>
-//   );
-// };
-
-console.log(<App />);
+console.log(getGamesData());
 
 ReactDom.render(
   <BrowserRouter>

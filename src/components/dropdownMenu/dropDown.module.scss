@@ -1,0 +1,30 @@
+.dropdown {
+  color: #dadad9;
+  text-decoration: none;
+  height: 100%;
+  text-align: center;
+  line-height: 96px;
+  background: #303030;
+}
+
+.inner {
+  border: none;
+  background: #121212;
+  color: #dadad9;
+  font-size: 17px;
+}
+
+.item {
+  background: #121212;
+  color: #dadad9;
+}
+
+.inner:hover,
+.item:hover {
+  background-color: #272727;
+}
+
+.inner:active,
+.item:active {
+  background: linear-gradient(180deg, rgba(39, 39, 39, 1) 47%, rgba(18, 18, 18, 1) 100%);
+}

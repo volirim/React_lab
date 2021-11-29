@@ -111,9 +111,11 @@
     "webpack-mock-server": "^1.0.15"
   },
   "dependencies": {
+    "@szhsin/react-menu": "^2.3.0",
     "react": "^17.0.2",
     "react-alert": "^7.0.3",
     "react-dom": "^17.0.2",
+    "react-dropdown": "^1.9.2",
     "react-error-boundary": "^3.1.4",
     "react-router": "^6.0.2",
     "react-router-dom": "^6.0.2"
