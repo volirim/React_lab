@@ -1,0 +1,17 @@
+.container {
+  width: 90%;
+  margin: 3% auto 2% auto;
+  border-radius: 40px;
+  padding: 2% 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #12121231;
+}
+
+.bottom {
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
