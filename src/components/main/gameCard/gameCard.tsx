@@ -5,15 +5,16 @@ const GameCard = function (props: ApiObject) {
   return (
     <div className={card.card}>
       <div className={card.side}>
-        <div>
-          <div>{props.name}</div>
-          <div>{props.price}</div>
+        <img src={props.img} alt="overwatch" className={card.image} />
+        <div className={card.front}>
+          <div>{props.name.toUpperCase()}</div>
+          <div>{props.price}$</div>
         </div>
-        <div>{props.rating}</div>
+        <div>{props.rating} stars</div>
       </div>
       <div className={`${card.side} ${card.back}`}>
         <div>{props.description}</div>
-        <button>Add to cart</button>
+        <button className={card.button}>Add to cart</button>
       </div>
     </div>
   );

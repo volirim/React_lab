@@ -6,7 +6,6 @@ import ErrorBoundary from "./components/error/error";
 import "./styles/main.css";
 import "./styles/main.scss";
 
-import getGamesData from "./api/mockapiData";
 // watch: native intellisense and file-peek for aliases from jsconfig.json and with none-js files doesn't work: https://github.com/microsoft/TypeScript/issues/29334
 
 import Header from "./components/header/header";
@@ -16,14 +15,12 @@ import About from "./components/main/aboutPage";
 import Products from "./components/main/productsPage";
 import SignIn from "./components/main/signInPage";
 import SignUp from "./components/main/signUpPage";
-import Search from "./components/search/search";
 
 class App extends React.Component {
   render() {
     return (
       <>
         <Header />
-        <Search />
         <ErrorBoundary>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -41,8 +38,6 @@ class App extends React.Component {
     );
   }
 }
-
-console.log(getGamesData());
 
 ReactDom.render(
   <BrowserRouter>

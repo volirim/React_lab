@@ -1,5 +1,6 @@
 type ApiObject = {
   name: string;
+  img: string;
   categories: string[];
   price: string;
   rating: string;

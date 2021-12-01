@@ -1,6 +1,8 @@
 .circle {
-  width: 35px;
-  height: 35px;
+  position: absolute;
+  right: 25px;
+  width: 25px;
+  height: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,6 +16,10 @@
   transform: translateZ(0);
   -webkit-animation: circle-loader-spin 1s infinite linear;
   animation: circle-loader-spin 1s infinite linear;
+}
+
+.none {
+  display: none;
 }
 
 @keyframes circle-loader-spin {

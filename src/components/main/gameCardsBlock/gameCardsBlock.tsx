@@ -1,18 +1,10 @@
-import { useEffect, useState } from "react";
 import GameCard from "../gameCard/gameCard";
-import ApiObject from "@/types/Mockapi";
 import cardsBlock from "./gameCards.module.scss";
 import title from "../categoriesBlock/categories.module.scss";
+import ApiObject from "@/types/Mockapi";
+import cardsBlockType from "@/types/cardsBlock";
 
-const GameCardsBlock = function () {
-  const [cards, setCard] = useState<ApiObject[] | never[]>([]);
-
-  useEffect(() => {
-    fetch("https://61a36f44d5e8330017292010.mockapi.io/games")
-      .then((response) => response.json())
-      .then((response) => setCard(response));
-  }, []);
-
+const GameCardsBlock = function ({ cards, name }: cardsBlockType) {
   return (
     <div className={cardsBlock.container}>
       <div className={title.top}>
@@ -20,8 +12,12 @@ const GameCardsBlock = function () {
         <div className={title.line} />
       </div>
       <div className={cardsBlock.bottom}>
-        {cards.length ? cards.map((element) => <GameCard {...element} />) : <div>Игр нет</div>}
-      </div>{" "}
+        {cards.map((element: ApiObject) => {
+          if (element.name.toLowerCase().includes(name.toLowerCase())) {
+            return <GameCard {...element} />;
+          }
+        })}
+      </div>
     </div>
   );
 };
