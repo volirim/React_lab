@@ -12,7 +12,7 @@ const Home = function () {
   const updateName = (value: string) => setName(value);
 
   useEffect(() => {
-    fetch("https://61a36f44d5e8330017292010.mockapi.io/games")
+    fetch("https://61a36f44d5e8330017292010.mockapi.io/topgames")
       .then((response) => response.json())
       .then((response) => setCard(response));
   }, []);

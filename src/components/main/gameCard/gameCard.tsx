@@ -10,11 +10,14 @@ const GameCard = function (props: ApiObject) {
           <div>{props.name.toUpperCase()}</div>
           <div>{props.price}$</div>
         </div>
-        <div>{props.rating} stars</div>
+        <div className={card.categories}>{props.categories.join(", ")}</div>
+        <div className={card.rating}>{props.rating} stars</div>
       </div>
       <div className={`${card.side} ${card.back}`}>
         <div>{props.description}</div>
-        <button className={card.button}>Add to cart</button>
+        <button className={card.button} type="button" onClick={() => alert("Good product")}>
+          Add to cart
+        </button>
       </div>
     </div>
   );

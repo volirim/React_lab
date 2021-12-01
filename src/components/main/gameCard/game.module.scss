@@ -31,9 +31,18 @@
 }
 
 .front {
-  padding: 3% 5%;
+  padding: 2% 5%;
   display: flex;
   justify-content: space-between;
+}
+
+.categories {
+  padding: 0 5% 2% 5%;
+}
+
+.rating {
+  padding-right: 5%;
+  text-align: end;
 }
 
 .back {
