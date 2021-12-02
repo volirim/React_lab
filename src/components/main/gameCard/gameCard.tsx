@@ -1,7 +1,8 @@
 import card from "./game.module.scss";
-import ApiObject from "@/types/Mockapi";
+import GameCardType from "@/types/Mockapi";
+import Rating from "./starsRating/Rating";
 
-const GameCard = function (props: ApiObject) {
+const GameCard = function (props: GameCardType) {
   return (
     <div className={card.card}>
       <div className={card.side}>
@@ -11,7 +12,8 @@ const GameCard = function (props: ApiObject) {
           <div>{props.price}$</div>
         </div>
         <div className={card.categories}>{props.categories.join(", ")}</div>
-        <div className={card.rating}>{props.rating} stars</div>
+        <div className={card.flexible} />
+        <Rating rating={props.rating} />
       </div>
       <div className={`${card.side} ${card.back}`}>
         <div>{props.description}</div>

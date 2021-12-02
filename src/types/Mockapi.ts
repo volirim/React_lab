@@ -1,4 +1,4 @@
-type ApiObject = {
+type GameCardType = {
   name: string;
   img: string;
   categories: string[];
@@ -7,4 +7,4 @@ type ApiObject = {
   description: string;
 };
 
-export default ApiObject;
+export default GameCardType;

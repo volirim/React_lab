@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
-import ApiObject from "@/types/Mockapi";
-import "./mainPage.scss";
+import GameCardType from "@/types/Mockapi";
 import Search from "../search/search";
 import GameCardsBlock from "./gameCardsBlock/gameCardsBlock";
 import CategoriesBlock from "./categoriesBlock/categories";
 
 const Home = function () {
-  const [cards, setCard] = useState<ApiObject[] | never[]>([]);
+  const [cards, setCard] = useState<GameCardType[] | never[]>([]);
   const [name, setName] = useState("");
 
   const updateName = (value: string) => setName(value);

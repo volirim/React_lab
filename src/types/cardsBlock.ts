@@ -1,7 +1,7 @@
-import ApiObject from "./Mockapi";
+import GameCardType from "./Mockapi";
 
 type cardsBlockType = {
-  cards: ApiObject[];
+  cards: GameCardType[];
   name: string;
   category?: string | undefined;
 };

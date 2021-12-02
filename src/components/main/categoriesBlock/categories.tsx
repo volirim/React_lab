@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import routes from "@/utils/Routes";
 import categories from "./categories.module.scss";
 
 const CategoriesBlock = function () {
@@ -9,15 +10,11 @@ const CategoriesBlock = function () {
         <div className={categories.line} />
       </div>
       <div className={categories.bottom}>
-        <NavLink to="products/pc" className={categories.category}>
-          PC
-        </NavLink>
-        <NavLink to="products/playstation" className={categories.category}>
-          PLAYSTATION
-        </NavLink>
-        <NavLink to="products/xbox" className={categories.category}>
-          XBOX
-        </NavLink>
+        {routes[1].options.map((el) => (
+          <NavLink to={el.path} className={categories.category}>
+            {el.name.toUpperCase()}
+          </NavLink>
+        ))}
       </div>
     </div>
   );

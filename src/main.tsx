@@ -5,6 +5,7 @@ import ErrorBoundary from "./components/error/error";
 
 import "./styles/main.css";
 import "./styles/main.scss";
+import "./assets/globalStyles/mainPage.scss";
 
 // watch: native intellisense and file-peek for aliases from jsconfig.json and with none-js files doesn't work: https://github.com/microsoft/TypeScript/issues/29334
 
@@ -25,8 +26,7 @@ class App extends React.Component {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/products/:id" element={<Products />} />
-            <Route path="/products/:id" element={<Products />} />
+            <Route path="/products/" element={<Products />} />
             <Route path="/products/:id" element={<Products />} />
             <Route path="/login" element={<SignIn />} />
             <Route path="/register" element={<SignUp />} />
