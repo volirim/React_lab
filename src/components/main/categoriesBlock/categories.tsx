@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
-import routes from "@/utils/Routes";
 import categories from "./categories.module.scss";
+import MAIN_MENU from "../../../constants/categoryMenu";
 
 const CategoriesBlock = function () {
   return (
@@ -10,7 +10,7 @@ const CategoriesBlock = function () {
         <div className={categories.line} />
       </div>
       <div className={categories.bottom}>
-        {routes[1].options.map((el) => (
+        {MAIN_MENU.map((el) => (
           <NavLink to={el.path} className={categories.category}>
             {el.name.toUpperCase()}
           </NavLink>

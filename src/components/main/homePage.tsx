@@ -3,6 +3,7 @@ import GameCardType from "@/types/Mockapi";
 import Search from "../search/search";
 import GameCardsBlock from "./gameCardsBlock/gameCardsBlock";
 import CategoriesBlock from "./categoriesBlock/categories";
+import getGamesData from "@/api/mockapiData";
 
 const Home = function () {
   const [cards, setCard] = useState<GameCardType[] | never[]>([]);
@@ -11,9 +12,7 @@ const Home = function () {
   const updateName = (value: string) => setName(value);
 
   useEffect(() => {
-    fetch("https://61a36f44d5e8330017292010.mockapi.io/topgames")
-      .then((response) => response.json())
-      .then((response) => setCard(response));
+    getGamesData(cards, setCard, "topgames");
   }, []);
 
   return (

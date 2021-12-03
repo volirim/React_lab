@@ -3,24 +3,23 @@ import { useParams } from "react-router";
 import GameCardType from "@/types/Mockapi";
 import Search from "../search/search";
 import GameCardsBlock from "./gameCardsBlock/gameCardsBlock";
+import getGamesData from "@/api/mockapiData";
 
 const Products: React.FC = function () {
-  const { id } = useParams();
+  const { platform } = useParams();
   const [cards, setCard] = useState<GameCardType[] | never[]>([]);
   const [name, setName] = useState("");
 
   const updateName = (value: string) => setName(value);
 
   useEffect(() => {
-    fetch("https://61a36f44d5e8330017292010.mockapi.io/games")
-      .then((response) => response.json())
-      .then((response) => setCard(response));
+    getGamesData(cards, setCard, "games");
   }, []);
 
   return (
     <div className="main-container">
       <Search updateName={updateName} />
-      <GameCardsBlock cards={cards} name={name} category={id} />
+      <GameCardsBlock cards={cards} name={name} category={platform} />
     </div>
   );
 };

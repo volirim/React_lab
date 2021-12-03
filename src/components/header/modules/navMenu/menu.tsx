@@ -1,21 +1,16 @@
-import DropDownMenu from "@/components/dropdownMenu/dropDownMenu";
-import routes from "@/utils/Routes";
+import MenuInterface from "@/types/MenuInterface";
 import "@szhsin/react-menu/dist/index.css";
-import nav from "./menu.module.scss";
+import classes from "./menu.module.scss";
 import MenuElement from "./menuElement/menuElement";
 
-const NavMenu = function () {
+const NavMenu = function ({ menu, root = true }: MenuInterface) {
+  const classesList = [classes.menu, root ? classes.menuRoot : classes.menuSub].join(" ");
   return (
-    <nav className={nav.container}>
-      <ul className={nav.menu}>
-        {routes.map((component) => {
-          if (!component.options.length) {
-            return <MenuElement component={component} />;
-          }
-          return <DropDownMenu component={component} />;
-        })}
-      </ul>
-    </nav>
+    <ul className={classesList}>
+      {menu.map((item) => (
+        <MenuElement item={item} />
+      ))}
+    </ul>
   );
 };
 

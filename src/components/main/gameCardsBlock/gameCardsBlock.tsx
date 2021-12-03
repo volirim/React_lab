@@ -1,7 +1,7 @@
 import cardsBlock from "./gameCards.module.scss";
 import title from "../categoriesBlock/categories.module.scss";
 import cardsBlockType from "@/types/cardsBlock";
-import SplitCardsCategories from "@/utils/CardsCategoriesSplitter";
+import SplitCardsCategories from "@/utils/Cards";
 
 const GameCardsBlock = function ({ cards, name, category }: cardsBlockType) {
   return (
