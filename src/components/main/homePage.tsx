@@ -12,7 +12,11 @@ const Home = function () {
   const updateName = (value: string) => setName(value);
 
   useEffect(() => {
-    getGamesData(setCard, "topgames");
+    async function fetchData() {
+      const data = await getGamesData("topgames");
+      setCard(data);
+    }
+    fetchData();
   }, []);
 
   return (
