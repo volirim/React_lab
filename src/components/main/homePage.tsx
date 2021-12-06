@@ -13,8 +13,7 @@ const Home = function () {
 
   useEffect(() => {
     async function fetchData() {
-      const data = await getGamesData("topgames");
-      setCard(data);
+      setCard(await getGamesData("topgames"));
     }
     fetchData();
   }, []);

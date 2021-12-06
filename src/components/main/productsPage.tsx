@@ -14,8 +14,7 @@ const Products: React.FC = function () {
 
   useEffect(() => {
     async function fetchData() {
-      const data = await getGamesData("games");
-      setCard(data);
+      setCard(await getGamesData("games"));
     }
     fetchData();
   }, []);
