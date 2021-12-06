@@ -5,6 +5,8 @@ import ErrorBoundary from "./components/error/error";
 
 import "./styles/main.css";
 import "./styles/main.scss";
+import "./assets/globalStyles/mainPage.scss";
+
 // watch: native intellisense and file-peek for aliases from jsconfig.json and with none-js files doesn't work: https://github.com/microsoft/TypeScript/issues/29334
 
 import Header from "./components/header/header";
@@ -18,42 +20,25 @@ import SignUp from "./components/main/signUpPage";
 class App extends React.Component {
   render() {
     return (
-      <ErrorBoundary>
-        <>
-          <Header />
+      <>
+        <Header />
+        <ErrorBoundary>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/products" element={<Products />} />
+            <Route path="/products/" element={<Products />}>
+              <Route path=":platform" />
+            </Route>
             <Route path="/login" element={<SignIn />} />
             <Route path="/register" element={<SignUp />} />
             <Route path="*" element={<Navigate to="/" />} />;
           </Routes>
-          <Footer />
-        </>
-      </ErrorBoundary>
+        </ErrorBoundary>
+        <Footer />
+      </>
     );
   }
 }
-
-// const App: React.FC = function () {
-//   return (
-//     <>
-//       <Header />
-//       <Routes>
-//         <Route path="/" element={<Home />} />
-//         <Route path="/about" element={<About />} />
-//         <Route path="/products" element={<Products />} />
-//         <Route path="/login" element={<SignIn />} />
-//         <Route path="/register" element={<SignUp />} />
-//         <Route path="*" element={<Home />} />
-//       </Routes>
-//       <Footer />
-//     </>
-//   );
-// };
-
-console.log(<App />);
 
 ReactDom.render(
   <BrowserRouter>

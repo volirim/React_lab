@@ -1,23 +1,17 @@
-import { NavLink } from "react-router-dom";
-import { useLocation } from "react-router";
-import routes from "@/utils/Routes";
-import nav from "./menu.module.scss";
+import MenuInterface from "@/types/MenuInterface";
+import "@szhsin/react-menu/dist/index.css";
+import classes from "./menu.module.scss";
+import MenuElement from "./menuElement/menuElement";
 
-const Menu = function () {
+const NavMenu = function ({ menu, root = true }: MenuInterface) {
+  const classesList = [classes.menu, root ? classes.menuRoot : classes.menuSub].join(" ");
   return (
-    <nav className={nav.container}>
-      <ul className={nav.menu}>
-        {routes.map((component) => (
-          <NavLink
-            to={component.path}
-            className={useLocation().pathname === component.path ? `${nav.item} ${nav.active}` : `${nav.item}`}
-          >
-            {component.name}
-          </NavLink>
-        ))}
-      </ul>
-    </nav>
+    <ul className={classesList}>
+      {menu.map((item) => (
+        <MenuElement item={item} />
+      ))}
+    </ul>
   );
 };
 
-export default Menu;
+export default NavMenu;
