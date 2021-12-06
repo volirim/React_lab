@@ -3,6 +3,8 @@ import GameCardType from "@/types/Mockapi";
 import Rating from "./starsRating/Rating";
 
 const GameCard = function (props: GameCardType) {
+  // console.log(props);
+
   return (
     <div className={card.card}>
       <div className={card.side}>

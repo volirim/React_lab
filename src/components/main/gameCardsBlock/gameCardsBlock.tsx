@@ -1,7 +1,8 @@
 import cardsBlock from "./gameCards.module.scss";
 import title from "../categoriesBlock/categories.module.scss";
 import cardsBlockType from "@/types/cardsBlock";
-import SplitCardsCategories from "@/utils/Cards";
+import splitCards from "@/utils/splitCards";
+import GameCard from "../gameCard/gameCard";
 
 const GameCardsBlock = function ({ cards, name, category }: cardsBlockType) {
   return (
@@ -10,7 +11,11 @@ const GameCardsBlock = function ({ cards, name, category }: cardsBlockType) {
         <h3 className={title.title}>{category ? category.toUpperCase() : "Games"}</h3>
         <div className={title.line} />
       </div>
-      <SplitCardsCategories cards={cards} name={name} category={category} />
+      <div className={cardsBlock.gameCards}>
+        {splitCards(cards, name, category).map((element) => (
+          <GameCard {...element} />
+        ))}
+      </div>
     </div>
   );
 };
