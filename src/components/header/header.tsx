@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import NavMenu from "./modules/navMenu/menu";
 import header from "./header.module.scss";
-import HEADER_MENU from "../../constants/menus";
+import { HEADER_MENU } from "../../constants/menus";
 
 const Header: React.FC = function () {
   return (

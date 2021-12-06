@@ -1,11 +1,11 @@
 .menu {
-  width: 30em;
   display: flex;
   padding: 0;
   list-style: none;
 }
 
 .item {
+  padding: 0 15px;
   flex-grow: 1;
   display: flex;
   justify-content: center;

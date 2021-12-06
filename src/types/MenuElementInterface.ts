@@ -1,9 +1,12 @@
-import HEADER_MENU from "@/constants/menus";
-
 interface ItemInterface {
   name: string;
   path: string;
-  sub?: typeof HEADER_MENU;
+  SUB_MENU?: SubMenuArray[];
+}
+
+interface SubMenuArray {
+  name: string;
+  path: string;
 }
 
 interface MenuElementInterface {

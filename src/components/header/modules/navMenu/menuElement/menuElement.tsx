@@ -11,7 +11,7 @@ const MenuElement = function ({ item }: MenuElementInterface) {
       <NavLink to={item.path} className={classes.link}>
         {item.name}
       </NavLink>
-      {item.sub && <NavMenu menu={item.sub} root={false} />}
+      {item.SUB_MENU && <NavMenu menu={item.SUB_MENU} root={false} />}
     </li>
   );
 };
