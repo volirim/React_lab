@@ -13,7 +13,7 @@ const Products: React.FC = function () {
   const updateName = (value: string) => setName(value);
 
   useEffect(() => {
-    getGamesData(cards, setCard, "games");
+    getGamesData(setCard, "games");
   }, []);
 
   return (

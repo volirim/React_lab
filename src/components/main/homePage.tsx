@@ -12,7 +12,7 @@ const Home = function () {
   const updateName = (value: string) => setName(value);
 
   useEffect(() => {
-    getGamesData(cards, setCard, "topgames");
+    getGamesData(setCard, "topgames");
   }, []);
 
   return (
