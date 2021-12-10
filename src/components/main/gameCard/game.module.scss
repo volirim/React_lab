@@ -68,16 +68,15 @@
   border-radius: 20px;
   transition: 0.2s;
   color: #dadad9;
-  background: purple;
+  background: #562370;
 }
 
 .button:hover {
   transition: 0.2s;
   color: #dadad975;
-  background: rgba(128, 0, 128, 0.493);
+  background: #562370bd;
 }
 
 .button:active {
-  width: 30%;
-  border: none;
+  background: linear-gradient(180deg, rgba(86, 35, 112, 1) 50%, rgba(34, 13, 45, 1) 100%);
 }

@@ -1,0 +1,22 @@
+.inputWrapper {
+  width: fit-content;
+  padding: 2%;
+}
+
+.input {
+  color: #dadad9;
+  border-radius: 15px;
+  border: 2px solid #dadad9;
+  background: #121213;
+  font-size: 20px;
+  padding: 5%;
+}
+
+.input:placeholder-shown {
+  color: black;
+}
+
+.input:focus {
+  border-radius: 15px;
+  border: 2px solid #dadad9;
+}

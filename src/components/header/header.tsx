@@ -1,15 +1,16 @@
 import { NavLink } from "react-router-dom";
 import NavMenu from "./modules/navMenu/menu";
 import header from "./header.module.scss";
-import { HEADER_MENU } from "../../constants/menus";
+import { HEADER_MENU, HEADER_MENU_AUTHORISED } from "../../constants/menus";
+import { UserStatusInterface } from "@/types/UserStatusInterface";
 
-const Header: React.FC = function () {
+const Header = function ({ userStatus }: UserStatusInterface) {
   return (
     <header className={header.container}>
       <NavLink to="/" className={header.title}>
         Game Store
       </NavLink>
-      <NavMenu menu={HEADER_MENU} />
+      <NavMenu menu={userStatus ? HEADER_MENU_AUTHORISED : HEADER_MENU} />
     </header>
   );
 };
