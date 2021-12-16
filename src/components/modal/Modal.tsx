@@ -1,12 +1,12 @@
 import ReactDOM from "react-dom";
 import { NavLink } from "react-router-dom";
-import { SetUserStatusInterface } from "@/types/UserStatusInterface";
+import { SetUserStatusInterface } from "@/types/userStatusInterface";
 import modal from "./modal.module.scss";
 import ModalWindow from "./modalWindow/ModalWindow";
+import { setClass } from "@/utils/setClass";
 
 const ModalRoot = function ({ updateUserStatus }: SetUserStatusInterface) {
-  document.body.setAttribute("style", "overflow: hidden");
-  const modalElement = document.getElementById("modal")!;
+  setClass("body", "modalOpened");
 
   return ReactDOM.createPortal(
     <div className={modal.container}>
@@ -22,7 +22,7 @@ const ModalRoot = function ({ updateUserStatus }: SetUserStatusInterface) {
         <ModalWindow updateUserStatus={updateUserStatus} />
       </div>
     </div>,
-    modalElement
+    document.getElementById("modals")!
   );
 };
 

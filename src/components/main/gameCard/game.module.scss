@@ -1,3 +1,5 @@
+@import "colorVariables";
+
 .card {
   position: relative;
   left: 10px;
@@ -5,7 +7,7 @@
   width: 20%;
   transition: 1s;
   transform-style: preserve-3d;
-  color: #dadad9;
+  color: $white;
   box-shadow: 1px 0 7px 5px purple;
   background: #1e1e1e;
   border-radius: 20px;
@@ -36,18 +38,18 @@
 }
 
 .front {
-  padding: 2% 5%;
+  padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
 
 .categories {
-  padding: 0 5% 2% 5%;
+  padding: 0 0 0 20px;
 }
 
 .rating {
-  padding-right: 5%;
+  padding-right: 20px;
   text-align: end;
 }
 
@@ -63,11 +65,11 @@
 
 .button {
   width: 35%;
-  padding: 4%;
+  padding: 15px;
   border: none;
   border-radius: 20px;
   transition: 0.2s;
-  color: #dadad9;
+  color: $white;
   background: #562370;
 }
 

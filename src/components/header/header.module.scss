@@ -1,9 +1,11 @@
+@import "colorVariables";
+
 .container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  color: #dadad9;
-  background-color: #121212;
+  color: $white;
+  background-color: $black;
 }
 
 .title {
@@ -12,10 +14,10 @@
   text-decoration: none;
   font-size: 35px;
   font-weight: bold;
-  color: #dadad9;
+  color: $white;
   border-bottom: 4px solid purple;
 }
 
 .title:active {
-  color: #dadad9;
+  color: $white;
 }

@@ -1,8 +1,10 @@
+@import "colorVariables";
+
 .container {
-  padding: 2% 0;
+  padding: 40px 0;
   flex-shrink: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #121212;
+  background-color: $black;
 }

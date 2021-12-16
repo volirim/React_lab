@@ -26,4 +26,11 @@ const HEADER_MENU_AUTHORISED = [
   ROUTES_AUTHORISED.exit,
 ];
 
-export { HEADER_MENU, SUB_MENU, HEADER_MENU_AUTHORISED };
+function getMenu(userStatus: boolean) {
+  if (userStatus) {
+    return HEADER_MENU_AUTHORISED;
+  }
+  return HEADER_MENU;
+}
+
+export { HEADER_MENU, SUB_MENU, HEADER_MENU_AUTHORISED, getMenu };

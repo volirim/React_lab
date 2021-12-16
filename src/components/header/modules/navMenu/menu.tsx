@@ -1,4 +1,4 @@
-import MenuInterface from "@/types/MenuInterface";
+import MenuInterface from "@/types/menuInterface";
 import "@szhsin/react-menu/dist/index.css";
 import classes from "./menu.module.scss";
 import MenuElement from "./menuElement/menuElement";

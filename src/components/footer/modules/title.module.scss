@@ -1,7 +1,9 @@
+@import "colorVariables";
+
 .title {
   font-size: 22pt;
   font-weight: bold;
   margin-left: 5%;
-  color: #dadad9;
-  background-color: #121212;
+  color: $white;
+  background-color: $black;
 }

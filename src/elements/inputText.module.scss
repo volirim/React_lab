@@ -1,15 +1,13 @@
-.inputWrapper {
-  width: fit-content;
-  padding: 2%;
-}
+@import "colorVariables";
 
 .input {
-  color: #dadad9;
+  margin: 15px;
+  padding: 15px;
   border-radius: 15px;
-  border: 2px solid #dadad9;
+  border: 2px solid $white;
   background: #121213;
   font-size: 20px;
-  padding: 5%;
+  color: $white;
 }
 
 .input:placeholder-shown {
@@ -18,5 +16,5 @@
 
 .input:focus {
   border-radius: 15px;
-  border: 2px solid #dadad9;
+  border: 2px solid $white;
 }

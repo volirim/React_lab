@@ -1,12 +1,14 @@
-import InputTextInterface from "@/types/inputTextInterface";
-import "./inputText.scss";
+import { UseFormRegisterReturn } from "react-hook-form";
+import styles from "./inputText.module.scss";
 
-const InputText = function ({ register, placeholder }: InputTextInterface) {
-  return (
-    <div className="inputWrapper">
-      <input {...register} placeholder={placeholder} className="input" />
-    </div>
-  );
+interface InputTextInterface {
+  register: UseFormRegisterReturn;
+  placeholder: string;
+  type: string;
+}
+
+const InputText = function ({ register, placeholder, type }: InputTextInterface) {
+  return <input {...register} placeholder={placeholder} type={type} className={styles.input} />;
 };
 
 export default InputText;

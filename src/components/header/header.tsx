@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom";
-import NavMenu from "./modules/navMenu/menu";
+import NavMenu from "./modules/navMenu/Menu";
 import header from "./header.module.scss";
-import { HEADER_MENU, HEADER_MENU_AUTHORISED } from "../../constants/menus";
-import { UserStatusInterface } from "@/types/UserStatusInterface";
+import { getMenu } from "../../constants/menus";
+import { UserStatusInterface } from "@/types/userStatusInterface";
 
 const Header = function ({ userStatus }: UserStatusInterface) {
   return (
@@ -10,7 +10,7 @@ const Header = function ({ userStatus }: UserStatusInterface) {
       <NavLink to="/" className={header.title}>
         Game Store
       </NavLink>
-      <NavMenu menu={userStatus ? HEADER_MENU_AUTHORISED : HEADER_MENU} />
+      <NavMenu menu={getMenu(userStatus)} />
     </header>
   );
 };

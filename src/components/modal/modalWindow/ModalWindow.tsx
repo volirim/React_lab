@@ -1,8 +1,8 @@
-import SignUpModal from "@/components/signUpModal/signUpModal";
-import SignInModal from "@/components/signInModal/signInModal";
-import SignOutModal from "@/components/signOutModal/signOutModal";
+import SignUpModal from "@/components/modals/signUpModal/SignUpModal";
+import SignInModal from "@/components/modals/signInModal/SignInModal";
+import SignOutModal from "@/components/modals/signOutModal/SignOutModal";
 import content from "./modalWindow.module.scss";
-import { SetUserStatusInterface } from "@/types/UserStatusInterface";
+import { SetUserStatusInterface } from "@/types/userStatusInterface";
 
 // eslint-disable-next-line consistent-return
 const ModalWindow = function ({ updateUserStatus }: SetUserStatusInterface) {

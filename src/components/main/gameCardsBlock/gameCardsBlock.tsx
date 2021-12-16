@@ -1,10 +1,9 @@
 import cardsBlock from "./gameCards.module.scss";
 import title from "../categoriesBlock/categories.module.scss";
 import cardsBlockType from "@/types/cardsBlock";
-import splitCards from "@/utils/splitCards";
-import GameCard from "../gameCard/gameCard";
+import FilterCategories from "@/utils/CategoryFilter";
 
-const GameCardsBlock = function ({ cards, name, category }: cardsBlockType) {
+const GameCardsBlock = function ({ cards, category }: cardsBlockType) {
   return (
     <div className={cardsBlock.container}>
       <div className={title.top}>
@@ -12,9 +11,7 @@ const GameCardsBlock = function ({ cards, name, category }: cardsBlockType) {
         <div className={title.line} />
       </div>
       <div className={cardsBlock.gameCards}>
-        {splitCards(cards, name, category).map((element) => (
-          <GameCard {...element} />
-        ))}
+        <FilterCategories cards={cards} category={category} />
       </div>
     </div>
   );
