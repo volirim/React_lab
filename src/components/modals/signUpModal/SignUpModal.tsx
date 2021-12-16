@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
-import InputText from "@/elements/inputText";
+import InputText from "@/elements/InputText";
 import { SetUserStatusInterface } from "@/types/userStatusInterface";
 import { UserRegisterInterface } from "@/types/userData";
 import performSubmit from "./navigateConstant";
