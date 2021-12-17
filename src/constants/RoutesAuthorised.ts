@@ -35,6 +35,7 @@ export default {
   },
   exit: {
     name: "LogOut",
-    path: "/exit",
+    isModal: true,
+    path: `?modal=logOut`,
   },
 };

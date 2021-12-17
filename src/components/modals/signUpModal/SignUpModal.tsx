@@ -4,6 +4,7 @@ import InputText from "@/elements/InputText";
 import { SetUserStatusInterface } from "@/types/userStatusInterface";
 import { UserRegisterInterface } from "@/types/userData";
 import performSubmit from "./navigateConstant";
+import ModalRoot from "@/components/modal/ModalBase";
 
 const SignUpModal = function ({ updateUserStatus }: SetUserStatusInterface) {
   const { register, handleSubmit } = useForm<UserRegisterInterface>();
@@ -18,13 +19,15 @@ const SignUpModal = function ({ updateUserStatus }: SetUserStatusInterface) {
   };
 
   return (
-    <form onSubmit={handleSubmit(navigateFunction)} className="form">
-      <label className="formTitle">Registration</label>
-      <InputText register={register("login")} placeholder="login" type="text" />
-      <InputText register={register("password")} placeholder="password" type="password" />
-      <InputText register={register("passwordConfirm")} placeholder="confirm password" type="password" />
-      <input type="submit" value="submit" className="submitFormButton" />
-    </form>
+    <ModalRoot>
+      <form onSubmit={handleSubmit(navigateFunction)} className="form">
+        <label className="formTitle">Registration</label>
+        <InputText register={register("login")} placeholder="login" type="text" />
+        <InputText register={register("password")} placeholder="password" type="password" />
+        <InputText register={register("passwordConfirm")} placeholder="confirm password" type="password" />
+        <input type="submit" value="submit" className="submitFormButton" />
+      </form>
+    </ModalRoot>
   );
 };
 

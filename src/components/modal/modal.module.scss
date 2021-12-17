@@ -28,6 +28,10 @@
   width: 50px;
 }
 
+.closeButtonWrapper:hover {
+  background: red;
+}
+
 .closeLeftTop {
   position: absolute;
   width: 100%;
@@ -53,4 +57,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.innerContainer {
+  display: flex;
+  width: 65%;
+  align-self: center;
+  justify-self: center;
 }

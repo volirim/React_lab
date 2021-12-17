@@ -1,25 +1,31 @@
 import ReactDOM from "react-dom";
-import { NavLink } from "react-router-dom";
-import { SetUserStatusInterface } from "@/types/userStatusInterface";
+import { useLocation, useNavigate } from "react-router";
 import modal from "./modal.module.scss";
-import ModalWindow from "./modalWindow/ModalWindow";
 import { setClass } from "@/utils/setClass";
 
-const ModalRoot = function ({ updateUserStatus }: SetUserStatusInterface) {
+const ModalRoot = function ({ children }: unknown) {
   setClass("body", "modalOpened");
+  const navigate = useNavigate();
+  const { search } = useLocation();
+
+  const handleClick = () => {
+    const urlParams = new URLSearchParams(search);
+    urlParams.delete("modal");
+    return navigate(urlParams.toString());
+  };
 
   return ReactDOM.createPortal(
     <div className={modal.container}>
       <div className={modal.topContent}>
-        <NavLink to="/">
+        <div onClick={handleClick} className={modal.closeButtonWrapper}>
           <div className={modal.closeButton}>
             <div className={modal.closeLeftTop} />
             <div className={modal.closeRightTop} />
           </div>
-        </NavLink>
+        </div>
       </div>
       <div className={modal.bottomContent}>
-        <ModalWindow updateUserStatus={updateUserStatus} />
+        <div className={modal.innerContainer}>{children}</div>
       </div>
     </div>,
     document.getElementById("modals")!

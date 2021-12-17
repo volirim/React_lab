@@ -1,6 +1,7 @@
 interface ItemInterface {
   name: string;
   path: string;
+  isModal?: boolean;
   SUB_MENU?: SubMenuArray[];
 }
 

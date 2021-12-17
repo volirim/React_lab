@@ -29,10 +29,12 @@ export default {
   },
   signIn: {
     name: "Login",
-    path: "/login",
+    isModal: true,
+    path: `?modal=login`,
   },
   signUp: {
     name: "Register",
-    path: "/register",
+    isModal: true,
+    path: `?modal=register`,
   },
 };

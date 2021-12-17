@@ -3,12 +3,10 @@ import GameCardType from "@/types/mockapi";
 import Search from "../search/Search";
 import GameCardsBlock from "../main/gameCardsBlock/GameCardsBlock";
 import CategoriesBlock from "../main/categoriesBlock/Categories";
-import ModalRoot from "../modal/Modal";
-import { HomePagePropsInterface } from "@/types/homePagePropsInterface";
 import { removeClass } from "@/utils/setClass";
 import getGamesData from "@/api/getMockapiData";
 
-const Home = function ({ modalIsOpen, updateUserStatus }: HomePagePropsInterface) {
+const Home = function () {
   removeClass("body", "modalOpened");
 
   const [gamesList, setGamesList] = useState<GameCardType[]>([]);
@@ -27,7 +25,6 @@ const Home = function ({ modalIsOpen, updateUserStatus }: HomePagePropsInterface
       <Search updateGamesList={updateGamesList} />
       <CategoriesBlock />
       <GameCardsBlock cards={gamesList} />
-      {modalIsOpen && <ModalRoot updateUserStatus={updateUserStatus} />}
     </div>
   );
 };
