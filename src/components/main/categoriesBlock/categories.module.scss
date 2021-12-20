@@ -1,3 +1,5 @@
+@import "../../../assets/styles/parts/colors";
+
 .container {
   width: 90%;
   margin: 0 auto;
@@ -23,13 +25,13 @@
   width: 90%;
   height: 1px;
   border-radius: 5px;
-  box-shadow: 0px 1px 0 1px #dadad9;
+  box-shadow: 0px 1px 0 1px $white;
   // border: 1px solid ;
 }
 
 .bottom {
   width: 90%;
-  padding: 2% 0;
+  padding: 60px 0;
   display: flex;
   justify-content: space-around;
 }
@@ -37,13 +39,13 @@
 .category {
   transition: 0.5s;
   width: 25%;
-  padding: 5%;
+  padding: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #dadad9;
+  color: $white;
   text-decoration: none;
-  border: 3px solid #dadad9;
+  border: 3px solid $white;
   border-bottom-width: 10px;
   border-radius: 20px;
   background: #12121288;

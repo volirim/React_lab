@@ -1,8 +1,7 @@
-import GameCardType from "./Mockapi";
+import GameCardType from "./mockapi";
 
 type cardsBlockType = {
   cards: GameCardType[];
-  name: string;
   category?: string | undefined;
 };
 

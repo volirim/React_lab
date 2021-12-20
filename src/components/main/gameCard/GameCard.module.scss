@@ -1,0 +1,84 @@
+@import "../../../assets/styles/parts/colors";
+
+.card {
+  position: relative;
+  left: 10px;
+  margin: 2% 3%;
+  width: 20%;
+  transition: 1s;
+  transform-style: preserve-3d;
+  color: $white;
+  box-shadow: 1px 0 7px 5px purple;
+  background: #1e1e1e;
+  border-radius: 20px;
+}
+
+.card:hover {
+  transform: rotateY(180deg);
+  transition: transform 1.5s;
+}
+
+.side {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  backface-visibility: hidden;
+}
+
+.flexible {
+  flex-grow: 1;
+}
+
+.image {
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  object-fit: fill;
+}
+
+.front {
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.categories {
+  padding: 0 0 0 20px;
+}
+
+.rating {
+  padding-right: 20px;
+  text-align: end;
+}
+
+.back {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  transform: rotateY(180deg);
+}
+
+.button {
+  width: 35%;
+  padding: 15px;
+  border: none;
+  border-radius: 20px;
+  transition: 0.2s;
+  color: $white;
+  background: #562370;
+}
+
+.button:hover {
+  transition: 0.2s;
+  color: #dadad975;
+  background: #562370bd;
+}
+
+.button:active {
+  background: linear-gradient(180deg, rgba(86, 35, 112, 1) 50%, rgba(34, 13, 45, 1) 100%);
+}

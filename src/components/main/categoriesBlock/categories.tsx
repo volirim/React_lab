@@ -1,17 +1,17 @@
 import { NavLink } from "react-router-dom";
-import categories from "./categories.module.scss";
+import styles from "./Categories.module.scss";
 import { SUB_MENU } from "@/constants/menus";
 
 const CategoriesBlock = function () {
   return (
-    <div className={categories.container}>
-      <div className={categories.top}>
-        <h3 className={categories.title}>Categories</h3>
-        <div className={categories.line} />
+    <div className={styles.container}>
+      <div className={styles.top}>
+        <h3 className={styles.title}>Categories</h3>
+        <div className={styles.line} />
       </div>
-      <div className={categories.bottom}>
+      <div className={styles.bottom}>
         {SUB_MENU.map((el) => (
-          <NavLink to={el.path} className={categories.category}>
+          <NavLink to={el.path} className={styles.category}>
             {el.name.toUpperCase()}
           </NavLink>
         ))}

@@ -1,10 +1,14 @@
+import GameCardType from "./mockapi";
+
 interface CustomProps {
-  updateName: (value: string) => void;
+  updateGamesList: (value: GameCardType[]) => void;
+  category?: string;
 }
 
 interface SearchInputInterface {
-  updateValue: (value: string) => void;
+  updateGamesList: (value: GameCardType[]) => void;
   updateDisplay: (value: boolean) => void;
+  category?: string;
 }
 
 export { CustomProps, SearchInputInterface };

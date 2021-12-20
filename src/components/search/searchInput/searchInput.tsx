@@ -1,21 +1,31 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { debounce } from "lodash";
-import input from "./searchInput.module.scss";
+import debounce from "../../../utils/debounce";
+// eslint-disable-next-line import/no-unresolved
+import styles from "./SearchInput.module.scss";
 import { SearchInputInterface } from "@/types/searchBlockProps";
+import splitCards from "@/utils/splitCards";
+import getGamesData from "@/api/getMockapiData";
 
-const SearchInput: React.FC<SearchInputInterface> = function ({ updateValue, updateDisplay }) {
-  const delayedFunc = debounce((e) => {
+const SearchInput: React.FC<SearchInputInterface> = function ({ updateGamesList, updateDisplay, category }) {
+  console.log(category);
+  const delayedFunc = debounce(async (e: { target: { value: string } }) => {
     updateDisplay(false);
-    return updateValue(e.target.value);
+    if (category) {
+      return updateGamesList(
+        e.target.value !== "" ? await splitCards(e.target.value, category) : await getGamesData("/games")
+      );
+    }
+    return updateGamesList(e.target.value !== "" ? await splitCards(e.target.value) : await getGamesData("/topgames"));
   }, 300);
 
   return (
     <input
       placeholder="Search"
-      className={input.input}
+      className={styles.input}
       onChange={(e) => {
-        updateDisplay(true);
-        delayedFunc(e);
+        if (e.target.value !== "") {
+          updateDisplay(true);
+          delayedFunc(e);
+        }
       }}
     />
   );

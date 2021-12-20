@@ -1,8 +1,12 @@
-import GameCardType from "@/types/Mockapi";
+import getGamesData from "@/api/getMockapiData";
+import GameCardType from "@/types/mockapi";
 
-const splitCards = (cards: GameCardType[], names: string, category: string | undefined) => {
+const splitCards = async (name: string, category?: string | undefined) => {
+  const cards: GameCardType[] = await getGamesData("/games");
+  console.log(cards);
+
   function mappedArray(array: GameCardType[]) {
-    return array.filter((element: GameCardType) => element.name.toLowerCase().includes(names.toLowerCase()));
+    return array.filter((element: GameCardType) => element.name.toLowerCase().includes(name.toLowerCase()));
   }
 
   if (category) {
