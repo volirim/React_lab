@@ -13,23 +13,18 @@
   z-index: 2000;
 }
 
-.topContent {
+.closeButtonWrapper {
   position: relative;
-  width: 100%;
-  padding-top: 15px;
-  padding-right: 15px;
-  display: flex;
-  justify-content: flex-end;
+  width: fit-content;
+  align-self: flex-end;
+  border-radius: 15px;
+  height: fit-content;
 }
 
 .closeButton {
   position: relative;
   height: 50px;
   width: 50px;
-}
-
-.closeButtonWrapper:hover {
-  background: red;
 }
 
 .closeLeftTop {
@@ -52,7 +47,18 @@
   background: #fff;
 }
 
+.closeButtonWrapper:hover {
+  .closeLeftTop {
+    background-color: red;
+  }
+
+  .closeRightTop {
+    background-color: red;
+  }
+}
+
 .bottomContent {
+  position: relative;
   flex-grow: 1;
   display: flex;
   justify-content: center;
@@ -61,7 +67,7 @@
 
 .innerContainer {
   display: flex;
-  width: 65%;
-  align-self: center;
-  justify-self: center;
+  flex-direction: column;
+  justify-items: center;
+  z-index: 3000;
 }
