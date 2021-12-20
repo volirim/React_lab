@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
-import classes from "../menu.module.scss";
-import NavMenu from "../Menu";
-import MenuElementInterface from "@/types/menuElementInterface";
+import classes from "./Menu.module.scss";
+import NavMenu from "./Menu";
+import MenuElementInterface from "@/types/MenuElementInterface";
 
 const MenuElement = function ({ item }: MenuElementInterface) {
   const classesList = [classes.item].join(" ");

@@ -3,7 +3,7 @@ import ReactDom from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import MainApp from "./MainApp";
 
-import "./styles/main.scss";
+import "./assets/styles/main.scss";
 
 // watch: native intellisense and file-peek for aliases from jsconfig.json and with none-js files doesn't work: https://github.com/microsoft/TypeScript/issues/29334
 

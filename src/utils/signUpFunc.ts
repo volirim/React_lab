@@ -1,5 +1,5 @@
 import getGamesData from "@/api/getMockapiData";
-import sendUserData from "@/api/postMockapiData";
+import createUser from "@/api/postMockapiData";
 import { UserLoginInterface, UserRegisterInterface, UserServerInterface } from "@/types/userData";
 import setStorageData from "./setStorageData";
 import validateRegisterData from "./validators/registerValidation";
@@ -13,7 +13,7 @@ const onSubmitRegister = async (data: UserRegisterInterface) => {
       login: data.login.toLowerCase(),
       password: data.password.toLowerCase(),
     };
-    sendUserData(newUser);
+    createUser(newUser);
     return true;
   }
   return false;

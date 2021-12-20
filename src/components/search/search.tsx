@@ -1,5 +1,5 @@
 import { useState } from "react";
-import search from "./search.module.scss";
+import styles from "./Search.module.scss";
 
 import SearchInput from "./searchInput/SearchInput";
 import Loader from "./loader/Loader";
@@ -14,7 +14,7 @@ const Search: React.FC<CustomProps> = function ({ updateGamesList, category }) {
   };
 
   return (
-    <div className={search.container}>
+    <div className={styles.container}>
       <SearchInput updateGamesList={updateGamesList} updateDisplay={updateDisplay} category={category} />
       <Loader display={loaderDisplay} />
     </div>

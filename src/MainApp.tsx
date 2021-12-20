@@ -7,8 +7,9 @@ import Home from "./components/pages/Home";
 import About from "./components/pages/About";
 import Products from "./components/pages/Products";
 import PrivateRoute from "./components/privateRoute/PrivateRoute";
-import HocRoute from "./utils/HocRoute";
+import HocRoute from "./components/HocRoute";
 import Profile from "./components/pages/Profile";
+import NotFoundPage from "./components/pages/NotFound";
 
 const MainApp = function () {
   const status = JSON.parse(localStorage.getItem("authorised")!);
@@ -23,16 +24,16 @@ const MainApp = function () {
           <Route
             path="/about"
             element={
-              <PrivateRoute status={userStatus}>
-                <HocRoute Child={About} updateUserStatus={setUserStatus} />
+              <PrivateRoute status={userStatus} updateUserStatus={setUserStatus}>
+                <About />
               </PrivateRoute>
             }
           />
           <Route
             path="/products"
             element={
-              <PrivateRoute status={userStatus}>
-                <HocRoute Child={Products} updateUserStatus={setUserStatus} />
+              <PrivateRoute status={userStatus} updateUserStatus={setUserStatus}>
+                <Products />
               </PrivateRoute>
             }
           >
@@ -41,12 +42,12 @@ const MainApp = function () {
           <Route
             path="/profile"
             element={
-              <PrivateRoute status={userStatus}>
-                <HocRoute Child={Profile} updateUserStatus={setUserStatus} />
+              <PrivateRoute status={userStatus} updateUserStatus={setUserStatus}>
+                <Profile />
               </PrivateRoute>
             }
           />
-          {/* <Route path="*" element={<Navigate to="/" />} />; */}
+          <Route path="*" element={<NotFoundPage />} />;
         </Routes>
       </ErrorBoundary>
       <Footer />

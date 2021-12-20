@@ -1,4 +1,4 @@
-import ROUTES from "./Routes";
+import ROUTES from "./routes";
 import ROUTES_AUTHORISED from "./RoutesAuthorised";
 
 const SUB_MENU = [ROUTES.products.pc, ROUTES.products.playstation, ROUTES.products.xbox];

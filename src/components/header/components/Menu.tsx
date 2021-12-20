@@ -1,7 +1,7 @@
 import MenuInterface from "@/types/menuInterface";
 import "@szhsin/react-menu/dist/index.css";
-import classes from "./menu.module.scss";
-import MenuElement from "./menuElement/menuElement";
+import classes from "./Menu.module.scss";
+import MenuElement from "./MenuItem";
 
 const NavMenu = function ({ menu, root = true }: MenuInterface) {
   const classesList = [classes.menu, root ? classes.menuRoot : classes.menuSub].join(" ");

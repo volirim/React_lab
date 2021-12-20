@@ -1,27 +1,26 @@
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { SetUserStatusInterface } from "@/types/userStatusInterface";
-import styles from "./signOutModal.module.scss";
+import styles from "./SignOutModal.module.scss";
 import setStorageData from "../../../utils/setStorageData";
 import ModalRoot from "@/components/modal/ModalBase";
-import modal from "../../modal/modal.module.scss";
+import modalStyles from "../../modal/ModalBase.module.scss";
+import closeModal from "@/utils/closeModal";
 
 const SignOutModal = function ({ updateUserStatus }: SetUserStatusInterface) {
   const { search } = useLocation();
   const navigate = useNavigate();
 
   const handleClick = () => {
-    const urlParams = new URLSearchParams(search);
-    urlParams.delete("modal");
-    return navigate(urlParams.toString());
+    closeModal(search, navigate);
   };
 
   return (
     <ModalRoot>
       <div className={styles.container}>
-        <div onClick={handleClick} className={modal.closeButtonWrapper}>
-          <div className={modal.closeButton}>
-            <div className={modal.closeLeftTop} />
-            <div className={modal.closeRightTop} />
+        <div onClick={handleClick} className={modalStyles.closeButtonWrapper}>
+          <div className={modalStyles.closeButton}>
+            <div className={modalStyles.closeLeftTop} />
+            <div className={modalStyles.closeRightTop} />
           </div>
         </div>
         <p className={styles.title}>Are you sure you want to exit?</p>

@@ -3,7 +3,7 @@ import GameCardType from "@/types/mockapi";
 import Search from "../search/Search";
 import GameCardsBlock from "../main/gameCardsBlock/GameCardsBlock";
 import CategoriesBlock from "../main/categoriesBlock/Categories";
-import { removeClass } from "@/utils/setClass";
+import { removeClass } from "@/utils/classes";
 import getGamesData from "@/api/getMockapiData";
 
 const Home = function () {

@@ -1,15 +1,17 @@
 import { useForm } from "react-hook-form";
 import { useLocation, useNavigate } from "react-router";
-import InputText from "@/elements/InputText";
 import { SetUserStatusInterface } from "@/types/userStatusInterface";
 import { UserRegisterInterface } from "@/types/userData";
 import performSubmit from "./navigateConstant";
 import ModalRoot from "@/components/modal/ModalBase";
-import modal from "../../modal/modal.module.scss";
+import styles from "../../modal/ModalBase.module.scss";
+import closeModal from "@/utils/closeModal";
+import hideButton from "@/utils/hideSubmitButton";
 
 const SignUpModal = function ({ updateUserStatus }: SetUserStatusInterface) {
   const { register, handleSubmit } = useForm<UserRegisterInterface>();
   const navigate = useNavigate();
+  const { search } = useLocation();
 
   const navigateFunction = async (data: UserRegisterInterface) => {
     if (await performSubmit(data)) {
@@ -19,28 +21,29 @@ const SignUpModal = function ({ updateUserStatus }: SetUserStatusInterface) {
     return false;
   };
 
-  const { search } = useLocation();
-
   const handleClick = () => {
-    const urlParams = new URLSearchParams(search);
-    urlParams.delete("modal");
-    return navigate(urlParams.toString());
+    closeModal(search, navigate);
   };
 
   return (
     <ModalRoot>
       <form onSubmit={handleSubmit(navigateFunction)} className="form">
-        <div onClick={handleClick} className={modal.closeButtonWrapper}>
-          <div className={modal.closeButton}>
-            <div className={modal.closeLeftTop} />
-            <div className={modal.closeRightTop} />
+        <div onClick={handleClick} className={styles.closeButtonWrapper}>
+          <div className={styles.closeButton}>
+            <div className={styles.closeLeftTop} />
+            <div className={styles.closeRightTop} />
           </div>
         </div>
         <label className="formTitle">Registration</label>
-        <InputText register={register("login")} placeholder="login" type="text" />
-        <InputText register={register("password")} placeholder="password" type="password" />
-        <InputText register={register("passwordConfirm")} placeholder="confirm password" type="password" />
-        <input type="submit" value="submit" className="submitFormButton" />
+        <input {...register("login")} placeholder="login" type="text" className={styles.input} />
+        <input {...register("password")} placeholder="password" type="password" className={styles.input} />
+        <input
+          {...register("passwordConfirm")}
+          placeholder="confirm password"
+          type="password"
+          className={styles.input}
+        />
+        <input type="submit" value="submit" className="submitFormButton" onClick={hideButton} />
       </form>
     </ModalRoot>
   );
