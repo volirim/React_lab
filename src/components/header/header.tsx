@@ -1,10 +1,13 @@
 import { NavLink } from "react-router-dom";
+import { useContext } from "react";
 import NavMenu from "./components/Menu";
 import styles from "./Header.module.scss";
 import { getMenu } from "../../constants/menus";
-import { UserStatusInterface } from "@/types/userStatusInterface";
+import UserStatusContext from "@/context/userStatusContext";
 
-const Header = function ({ userStatus }: UserStatusInterface) {
+const Header = function () {
+  const { userStatus } = useContext(UserStatusContext);
+
   return (
     <header className={styles.container}>
       <NavLink to="/" className={styles.title}>
