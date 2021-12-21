@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-import { useState } from "react";
 import ErrorBoundary from "./components/error/Error";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
@@ -12,19 +11,16 @@ import Profile from "./components/pages/Profile";
 import NotFoundPage from "./components/pages/NotFound";
 
 const MainApp = function () {
-  const status = JSON.parse(localStorage.getItem("authorised")!);
-  const [userStatus, setUserStatus] = useState<boolean>(status);
-
   return (
     <>
-      <Header userStatus={userStatus} />
+      <Header />
       <ErrorBoundary>
         <Routes>
-          <Route path="/" element={<HocRoute Child={Home} updateUserStatus={setUserStatus} />} />
+          <Route path="/" element={<HocRoute Child={Home} />} />
           <Route
             path="/about"
             element={
-              <PrivateRoute status={userStatus} updateUserStatus={setUserStatus}>
+              <PrivateRoute>
                 <About />
               </PrivateRoute>
             }
@@ -32,7 +28,7 @@ const MainApp = function () {
           <Route
             path="/products"
             element={
-              <PrivateRoute status={userStatus} updateUserStatus={setUserStatus}>
+              <PrivateRoute>
                 <Products />
               </PrivateRoute>
             }
@@ -42,7 +38,7 @@ const MainApp = function () {
           <Route
             path="/profile"
             element={
-              <PrivateRoute status={userStatus} updateUserStatus={setUserStatus}>
+              <PrivateRoute>
                 <Profile />
               </PrivateRoute>
             }

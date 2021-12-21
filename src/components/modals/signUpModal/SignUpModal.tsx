@@ -1,21 +1,23 @@
 import { useForm } from "react-hook-form";
 import { useLocation, useNavigate } from "react-router";
-import { SetUserStatusInterface } from "@/types/userStatusInterface";
+import { useContext } from "react";
 import { UserRegisterInterface } from "@/types/userData";
 import performSubmit from "./navigateConstant";
 import ModalRoot from "@/components/modal/ModalBase";
 import styles from "../../modal/ModalBase.module.scss";
 import closeModal from "@/utils/closeModal";
 import hideButton from "@/utils/hideSubmitButton";
+import UserStatusContext from "@/context/userStatusContext";
 
-const SignUpModal = function ({ updateUserStatus }: SetUserStatusInterface) {
+const SignUpModal = function () {
   const { register, handleSubmit } = useForm<UserRegisterInterface>();
   const navigate = useNavigate();
   const { search } = useLocation();
+  const { setUserStatus } = useContext(UserStatusContext);
 
   const navigateFunction = async (data: UserRegisterInterface) => {
     if (await performSubmit(data)) {
-      updateUserStatus(true);
+      setUserStatus(true);
       return setTimeout(() => navigate("/profile"), 300);
     }
     return false;

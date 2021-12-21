@@ -1,20 +1,23 @@
 import { useForm } from "react-hook-form";
 import { useLocation, useNavigate } from "react-router";
+import { useContext } from "react";
 import onSubmitLogin from "@/utils/signInFunc";
-import { SetUserStatusInterface } from "@/types/userStatusInterface";
 import { UserLoginInterface } from "@/types/userData";
 import ModalRoot from "@/components/modal/ModalBase";
 import styles from "../../modal/ModalBase.module.scss";
 import closeModal from "@/utils/closeModal";
 import hideButton from "@/utils/hideSubmitButton";
+import UserStatusContext from "@/context/userStatusContext";
 
-const SignInModal = function ({ updateUserStatus }: SetUserStatusInterface) {
+const SignInModal = function () {
   const { register, handleSubmit } = useForm<UserLoginInterface>();
   const { search } = useLocation();
   const navigate = useNavigate();
 
+  const { setUserStatus } = useContext(UserStatusContext);
+
   const signIn = async (data: UserLoginInterface) => {
-    updateUserStatus(await onSubmitLogin(data));
+    setUserStatus(await onSubmitLogin(data));
     history.back();
   };
 
