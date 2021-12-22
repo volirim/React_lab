@@ -7,6 +7,8 @@ import ModalRoot from "@/components/modal/ModalBase";
 import styles from "../../modal/ModalBase.module.scss";
 import closeModal from "@/utils/closeModal";
 import hideButton from "@/utils/hideSubmitButton";
+import checkAuthAction from "@/redux/modules/auth/actionCreate";
+import authActions from "@/redux/modules/auth/actions";
 
 const SignUpModal = function () {
   const { register, handleSubmit } = useForm<UserRegisterInterface>();
@@ -16,7 +18,7 @@ const SignUpModal = function () {
 
   const navigateFunction = async (data: UserRegisterInterface) => {
     if (await performSubmit(data)) {
-      dispatch({ type: "CHECK", payload: true });
+      dispatch(checkAuthAction(authActions.IS_AUTHORISED_ACTION, true));
       return setTimeout(() => navigate("/profile"), 400);
     }
     return false;

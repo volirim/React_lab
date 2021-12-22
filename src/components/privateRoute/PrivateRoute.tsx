@@ -1,7 +1,7 @@
 import { Navigate, useLocation } from "react-router";
 import { useSelector } from "react-redux";
 import MODAL_LIST from "@/constants/modalList";
-import { DefaultStateInterface } from "@/redux/authorisation";
+import { DefaultStateInterface } from "@/redux/store";
 
 const PrivateRoute = function ({ children }: unknown) {
   const { search } = useLocation();

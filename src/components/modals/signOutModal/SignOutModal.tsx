@@ -1,10 +1,12 @@
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import styles from "./SignOutModal.module.scss";
-import setStorageData from "../../../utils/setStorageData";
+// import setStorageData from "../../../utils/setStorageData";
 import ModalRoot from "@/components/modal/ModalBase";
 import modalStyles from "../../modal/ModalBase.module.scss";
 import closeModal from "@/utils/closeModal";
+import checkAuthAction from "@/redux/modules/auth/actionCreate";
+import authActions from "@/redux/modules/auth/actions";
 
 const SignOutModal = function () {
   const { search } = useLocation();
@@ -30,7 +32,7 @@ const SignOutModal = function () {
           <NavLink
             to="/"
             className={styles.button}
-            onClick={() => dispatch({ type: "CHECK", payload: setStorageData(false) })}
+            onClick={() => dispatch(checkAuthAction(authActions.IS_AUTHORISED_ACTION, false))}
           >
             Yes
           </NavLink>
