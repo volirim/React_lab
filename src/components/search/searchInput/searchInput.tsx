@@ -6,7 +6,6 @@ import splitCards from "@/utils/splitCards";
 import getGamesData from "@/api/getMockapiData";
 
 const SearchInput: React.FC<SearchInputInterface> = function ({ updateGamesList, updateDisplay, category }) {
-  console.log(category);
   const delayedFunc = debounce(async (e: { target: { value: string } }) => {
     updateDisplay(false);
     if (category) {
