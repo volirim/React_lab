@@ -3,6 +3,7 @@ import { DefaultStateInterface } from "../../store";
 import authActions from "./actions";
 
 const defaultState = {
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   authorised: JSON.parse(localStorage.getItem("authorised")!),
 };
 
