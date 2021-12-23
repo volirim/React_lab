@@ -8,7 +8,6 @@ import styles from "../../modal/ModalBase.module.scss";
 import closeModal from "@/utils/closeModal";
 import hideButton from "@/utils/hideSubmitButton";
 import checkAuthAction from "@/redux/modules/auth/actionCreate";
-import authActions from "@/redux/modules/auth/actions";
 
 const SignInModal = function () {
   const { register, handleSubmit } = useForm<UserLoginInterface>();
@@ -18,7 +17,7 @@ const SignInModal = function () {
   const dispatch = useDispatch();
 
   const signIn = async (data: UserLoginInterface) => {
-    dispatch(checkAuthAction(authActions.IS_AUTHORISED_ACTION, await onSubmitLogin(data)));
+    dispatch(checkAuthAction(await onSubmitLogin(data)));
     history.back();
   };
 

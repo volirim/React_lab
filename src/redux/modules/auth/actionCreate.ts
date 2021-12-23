@@ -1,6 +1,7 @@
-// eslint-disable-next-line @typescript-eslint/ban-types
-const checkAuthAction = (typeOfAction: string, actionPayload: boolean) => ({
-  type: typeOfAction,
+import authActions from "./actions";
+
+const checkAuthAction = (actionPayload: boolean) => ({
+  type: authActions.IS_AUTHORISED_ACTION,
   payload: actionPayload,
 });
 

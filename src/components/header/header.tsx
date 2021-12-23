@@ -3,11 +3,11 @@ import { useSelector } from "react-redux";
 import NavMenu from "./components/Menu";
 import styles from "./Header.module.scss";
 import { getMenu } from "../../constants/menus";
-import { ReducersInterface } from "@/redux/modules/reducersCombined";
+import { StoreInterface } from "@/redux/modules/reducersCombined";
 // import { DefaultStateInterface } from "@/redux/authorisation";
 
 const Header = function () {
-  const authorised = useSelector((state: ReducersInterface) => state.isAuthorised.authorised);
+  const authorised = useSelector((state: StoreInterface) => state.auth.authorised);
 
   return (
     <header className={styles.container}>

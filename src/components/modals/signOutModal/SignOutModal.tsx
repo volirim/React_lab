@@ -6,7 +6,6 @@ import ModalRoot from "@/components/modal/ModalBase";
 import modalStyles from "../../modal/ModalBase.module.scss";
 import closeModal from "@/utils/closeModal";
 import checkAuthAction from "@/redux/modules/auth/actionCreate";
-import authActions from "@/redux/modules/auth/actions";
 
 const SignOutModal = function () {
   const { search } = useLocation();
@@ -29,11 +28,7 @@ const SignOutModal = function () {
         </div>
         <p className={styles.title}>Are you sure you want to exit?</p>
         <div className={styles.buttonsContainer}>
-          <NavLink
-            to="/"
-            className={styles.button}
-            onClick={() => dispatch(checkAuthAction(authActions.IS_AUTHORISED_ACTION, false))}
-          >
+          <NavLink to="/" className={styles.button} onClick={() => dispatch(checkAuthAction(false))}>
             Yes
           </NavLink>
           <button type="button" className={styles.link} onClick={() => history.back()}>

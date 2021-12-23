@@ -1,11 +1,11 @@
 import { combineReducers } from "@reduxjs/toolkit";
-// eslint-disable-next-line import/no-cycle
-import isAuthorised from "./auth/reducer";
+import authReducer from "./auth/reducer";
+import AuthState from "./auth/types";
 
-export interface ReducersInterface {
-  isAuthorised: {
-    authorised: boolean;
-  };
+export interface StoreInterface {
+  auth: AuthState;
 }
 
-export default combineReducers<ReducersInterface>({ isAuthorised });
+export default combineReducers<StoreInterface>({
+  auth: authReducer,
+});
