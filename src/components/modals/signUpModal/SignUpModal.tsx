@@ -1,24 +1,24 @@
 import { useForm } from "react-hook-form";
 import { useLocation, useNavigate } from "react-router";
-import { useContext } from "react";
+import { useDispatch } from "react-redux";
 import { UserRegisterInterface } from "@/types/userData";
-import performSubmit from "./navigateConstant";
 import ModalRoot from "@/components/modal/ModalBase";
 import styles from "../../modal/ModalBase.module.scss";
 import closeModal from "@/utils/closeModal";
 import hideButton from "@/utils/hideSubmitButton";
-import UserStatusContext from "@/context/userStatusContext";
+import checkAuthAction from "@/redux/modules/auth/actionCreate";
+import onSubmitRegister from "@/utils/signUpFunc";
 
 const SignUpModal = function () {
   const { register, handleSubmit } = useForm<UserRegisterInterface>();
   const navigate = useNavigate();
   const { search } = useLocation();
-  const { setUserStatus } = useContext(UserStatusContext);
+  const dispatch = useDispatch();
 
   const navigateFunction = async (data: UserRegisterInterface) => {
-    if (await performSubmit(data)) {
-      setUserStatus(true);
-      return setTimeout(() => navigate("/profile"), 300);
+    if (await onSubmitRegister(data)) {
+      dispatch(checkAuthAction(true));
+      navigate("/profile");
     }
     return false;
   };

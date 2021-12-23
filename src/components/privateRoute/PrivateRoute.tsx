@@ -1,16 +1,16 @@
 import { Navigate, useLocation } from "react-router";
-import { useContext } from "react";
+import { useSelector } from "react-redux";
 import MODAL_LIST from "@/constants/modalList";
-import UserStatusContext from "@/context/userStatusContext";
+import { StoreInterface } from "@/redux/modules/reducersCombined";
 
 const PrivateRoute = function ({ children }: unknown) {
   const { search } = useLocation();
   const modalParam = new URLSearchParams(search).get("modal");
   const Modal = MODAL_LIST[modalParam || "nothing"];
 
-  const { userStatus } = useContext(UserStatusContext);
+  const authorised = useSelector((state: StoreInterface) => state.auth.authorised);
 
-  return userStatus ? (
+  return authorised ? (
     <>
       {children}
       <Modal />

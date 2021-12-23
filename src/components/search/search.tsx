@@ -7,7 +7,6 @@ import { CustomProps } from "@/types/searchBlockProps";
 
 const Search: React.FC<CustomProps> = function ({ updateGamesList, category }) {
   const [loaderDisplay, setDisplay] = useState(false);
-  console.log(category);
 
   const updateDisplay = (value: boolean) => {
     setDisplay(value);
