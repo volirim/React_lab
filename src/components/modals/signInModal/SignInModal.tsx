@@ -17,8 +17,10 @@ const SignInModal = function () {
   const dispatch = useDispatch();
 
   const signIn = async (data: UserLoginInterface) => {
-    dispatch(checkAuthAction(await onSubmitLogin(data)));
-    history.back();
+    if (await onSubmitLogin(data)) {
+      dispatch(checkAuthAction(true));
+      history.back();
+    }
   };
 
   const handleClick = () => {

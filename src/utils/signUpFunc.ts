@@ -1,5 +1,7 @@
 import getGamesData from "@/api/getMockapiData";
 import createUser from "@/api/postMockapiData";
+import checkProfileAction from "@/redux/modules/userProfile/actionCreate";
+import store from "@/redux/store";
 import { UserLoginInterface, UserRegisterInterface, UserServerInterface } from "@/types/userData";
 import validateRegisterData from "./validators/registerValidation";
 
@@ -11,7 +13,13 @@ const onSubmitRegister = async (data: UserRegisterInterface) => {
       login: data.login.toLowerCase(),
       password: data.password.toLowerCase(),
     };
-    createUser(newUser);
+    await createUser(newUser);
+
+    const getUser = (await getGamesData("/user")).filter(
+      (element: UserServerInterface) => newUser.login === element.login
+    );
+    store.dispatch(checkProfileAction(getUser[0]));
+
     return true;
   }
   return false;
