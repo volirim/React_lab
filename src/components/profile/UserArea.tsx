@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import store from "@/redux/store";
 import styles from "./UserArea.module.scss";
 import loginChangeValidation from "@/utils/validators/loginChangeValidation";
+import checkProfileAction from "@/redux/modules/userProfile/actionCreate";
 
 interface DataInterface {
   login: string;
@@ -12,11 +13,20 @@ interface DataInterface {
 
 const UserArea = function () {
   const { register, handleSubmit } = useForm();
+  const { id, password } = store.getState().profile;
 
   const [url, setUrl] = useState("");
   window.onhashchange = () => setUrl(window.location.pathname);
 
   function onsubmit(data: DataInterface) {
+    store.dispatch(
+      checkProfileAction({
+        id,
+        login: data.login,
+        password,
+        description: data.description,
+      })
+    );
     return loginChangeValidation(data);
   }
 
