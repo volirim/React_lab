@@ -1,0 +1,18 @@
+.button {
+  text-decoration: none;
+  color: black;
+  padding: 10px 17px;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  background: #7c2ba5;
+}
+
+.button:hover {
+  background: #7c2ba5bb;
+}
+
+.button:active {
+  background: linear-gradient(180deg, rgba(86, 35, 112, 1) 50%, rgba(34, 13, 45, 1) 100%);
+}
