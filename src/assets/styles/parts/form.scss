@@ -1,0 +1,38 @@
+@import "colors";
+
+.form {
+  width: 100%;
+  display: flex;
+  padding: 0 0 40px 0;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 15px 10px #562370;
+  border-radius: 15px;
+  background: #121213;
+}
+
+.formTitle {
+  align-self: center;
+  padding-bottom: 80px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: $white;
+  font-size: 40px;
+}
+
+.submitFormButton {
+  padding: 20px 35px;
+  border-radius: 15px;
+  border: none;
+  font-size: 20px;
+  color: $white;
+  background: #562370;
+}
+
+.submitFormButton:hover {
+  background: #562370bd;
+}
+
+.submitFormButton:active {
+  background: linear-gradient(180deg, rgba(86, 35, 112, 1) 50%, rgba(34, 13, 45, 1) 100%);
+}

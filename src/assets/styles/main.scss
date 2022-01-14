@@ -1,0 +1,13 @@
+@import "./parts/reset.scss";
+@import "./parts/helpers.scss";
+@import "./parts/form.scss";
+@import "./parts/modal.scss";
+@import "./parts/button.scss";
+
+// .active {
+//   border-bottom: 4px solid purple;
+// }
+
+.hidden {
+  visibility: hidden;
+}
