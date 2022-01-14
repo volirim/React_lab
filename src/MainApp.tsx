@@ -1,14 +1,14 @@
 import { Route, Routes } from "react-router-dom";
-import ErrorBoundary from "./components/error/Error";
-import Header from "./components/header/Header";
-import Footer from "./components/footer/Footer";
-import Home from "./components/pages/Home";
-import About from "./components/pages/About";
-import Products from "./components/pages/Products";
-import PrivateRoute from "./components/privateRoute/PrivateRoute";
+import ErrorBoundary from "./components/Error/Error";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Products from "./pages/Products";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import HocRoute from "./components/HocRoute";
-import Profile from "./components/pages/Profile";
-import NotFoundPage from "./components/pages/NotFound";
+import Profile from "./pages/Profile";
+import NotFoundPage from "./pages/NotFound";
 
 const MainApp = function () {
   return (
