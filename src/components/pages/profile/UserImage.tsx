@@ -1,28 +1,36 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import getGamesData from "@/api/getMockapiData";
+import { useDispatch, useSelector } from "react-redux";
 import styles from "./UserImage.module.scss";
-import store from "@/redux/store";
+import getProfileImage from "@/utils/getProfileImage";
+import checkProfileAction from "@/redux/modules/userProfile/actionCreate";
+import { StoreInterface } from "@/redux/modules/reducersCombined";
 
 const ProfileImage = function () {
   const [url, setUrl] = useState("");
-  window.onhashchange = () => setUrl(window.location.pathname);
+  const { id, login, password, source } = useSelector((state: StoreInterface) => state.profile);
+  const dispatch = useDispatch();
 
-  const [image, setImage] = useState();
+  window.onhashchange = () => setUrl(window.location.pathname);
 
   useEffect(() => {
     async function fetchData() {
-      const profileObject = await getGamesData(`/user/${store.getState().profile.id}`);
-      setImage(profileObject.source);
+      const imageSrc: string = await getProfileImage();
+      dispatch(
+        checkProfileAction({
+          id,
+          login,
+          password,
+          source: imageSrc,
+        })
+      );
     }
     fetchData();
   }, []);
 
-  console.log(image);
-
   return (
     <div className={styles.container}>
-      <img src={image} alt="no profile pic" className={styles.picture} />
+      <img src={source} alt="no profile pic" className={styles.picture} />
       <NavLink className="button" to={`${url}?modal=changeImage`}>
         Change profile image
       </NavLink>

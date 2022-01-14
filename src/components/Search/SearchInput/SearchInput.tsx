@@ -1,3 +1,4 @@
+import { ChangeEvent } from "react";
 import debounce from "../../../utils/debounce";
 // eslint-disable-next-line import/no-unresolved
 import styles from "./SearchInput.module.scss";
@@ -6,7 +7,7 @@ import splitCards from "@/utils/splitCards";
 import getGamesData from "@/api/getMockapiData";
 
 const SearchInput: React.FC<SearchInputInterface> = function ({ updateGamesList, updateDisplay, category }) {
-  const delayedFunc = debounce(async (e: { target: { value: string } }) => {
+  const delayedFunc = debounce(async (e: ChangeEvent<HTMLInputElement>) => {
     updateDisplay(false);
     if (category) {
       return updateGamesList(
@@ -21,6 +22,8 @@ const SearchInput: React.FC<SearchInputInterface> = function ({ updateGamesList,
       placeholder="Search"
       className={styles.input}
       onChange={(e) => {
+        console.log(e.target.value);
+
         if (e.target.value !== "") {
           updateDisplay(true);
           delayedFunc(e);

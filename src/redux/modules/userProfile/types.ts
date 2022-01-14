@@ -3,6 +3,7 @@ interface ProfileStateInterface {
   login: string;
   password: string;
   description?: string;
+  source?: string;
 }
 
 export default ProfileStateInterface;

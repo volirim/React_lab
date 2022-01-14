@@ -4,7 +4,7 @@ function debounce(func: Function, timeout = 300) {
   return (...args: unknown[]) => {
     clearTimeout(timer);
     timer = setTimeout(() => {
-      func.apply(args);
+      func.apply({}, args);
     }, timeout);
   };
 }

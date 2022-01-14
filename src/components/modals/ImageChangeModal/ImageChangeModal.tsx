@@ -20,16 +20,19 @@ const ImageChangeModal = function () {
 
   const handleClick = () => {
     closeModal(search, navigate);
+    location.reload();
   };
 
-  const onSubmit = (data: DataInterface) =>
-    changeMockapiData({
+  const onSubmit = async (data: DataInterface) => {
+    await changeMockapiData({
       id,
       login,
       password,
       description,
       source: data.source,
     });
+    handleClick();
+  };
 
   return (
     <ModalRoot>

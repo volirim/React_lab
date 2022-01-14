@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { useSelector } from "react-redux";
 import store from "@/redux/store";
 import styles from "./UserArea.module.scss";
 import loginChangeValidation from "@/utils/validators/loginChangeValidation";
 import checkProfileAction from "@/redux/modules/userProfile/actionCreate";
+import { StoreInterface } from "@/redux/modules/reducersCombined";
 
 interface DataInterface {
   login: string;
@@ -13,12 +15,12 @@ interface DataInterface {
 
 const UserArea = function () {
   const { register, handleSubmit } = useForm();
-  const { id, password } = store.getState().profile;
+  const { login, description, id, password } = useSelector((state: StoreInterface) => state.profile);
 
   const [url, setUrl] = useState("");
   window.onhashchange = () => setUrl(window.location.pathname);
 
-  function onsubmit(data: DataInterface) {
+  function onSubmit(data: DataInterface) {
     store.dispatch(
       checkProfileAction({
         id,
@@ -31,20 +33,15 @@ const UserArea = function () {
   }
 
   return (
-    <form className={styles.container} onSubmit={handleSubmit(onsubmit)}>
+    <form className={styles.container} onSubmit={handleSubmit(onSubmit)}>
       <div>
         <p className={styles.text}>Username</p>
-        <input
-          type="text"
-          {...register("login")}
-          placeholder={store.getState().profile.login}
-          className={styles.input}
-        />
+        <input type="text" {...register("login")} placeholder={login} className={styles.input} />
         <p className={styles.text}>Profile description</p>
         <textarea
           {...register("description")}
           className={`${styles.input} ${styles.textArea}`}
-          placeholder={store.getState().profile.description}
+          placeholder={description}
         />
       </div>
       <div className={styles.buttonsContainer}>
