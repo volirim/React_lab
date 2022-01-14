@@ -194,9 +194,9 @@ module.exports = function (env, argv) {
             {
               loader: "sass-loader", // it compiles Sass to CSS, using Node Sass by default
               options: {
-                additionalData: '@import "variables";', // inject this import by default in each scss-file
+                // additionalData: '@import "main";', // inject this import by default in each scss-file
                 sassOptions: {
-                  includePaths: [path.resolve(__dirname, "src/styles")], // using pathes as root
+                  includePaths: [path.resolve(__dirname, "src/assets/styles")], // using pathes as root
                 },
               },
             },
