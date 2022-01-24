@@ -9,7 +9,7 @@ import checkSearchAction from "@/redux/modules/search/actionCreate";
 import store from "@/redux/store";
 
 const clearFiltersFunction = () => {
-  store.dispatch(checkSearchAction({ games: "" }));
+  store.dispatch(checkSearchAction(""));
   store.dispatch(checkGenresAction(""));
   store.dispatch(checkAgeAction(""));
   store.dispatch(checkRatingAction(""));

@@ -18,7 +18,7 @@ export default function searchReducer(
 
   switch (action.type) {
     case gameCardsActions.SET_DATA_ACTION:
-      return { ...state, games: action?.payload as string };
+      return { ...state, games: action.payload as string };
     default:
       return state;
   }

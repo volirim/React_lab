@@ -1,7 +1,6 @@
 import searchActions from "./actions";
-import SearchStateInterface from "./types";
 
-const checkSearchAction = (payload: SearchStateInterface) => ({
+const checkSearchAction = (payload: string) => ({
   type: searchActions.SET_DATA_ACTION,
   payload,
 });

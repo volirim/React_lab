@@ -10,7 +10,7 @@ const SearchInput: React.FC<SearchInputInterface> = function ({ updateDisplay })
   const dispatch = useDispatch();
   const delayedFunc = debounce(async (e: ChangeEvent<HTMLInputElement>) => {
     updateDisplay(false);
-    dispatch(checkSearchAction({ games: e.target.value }));
+    dispatch(checkSearchAction(e.target.value));
   }, 300);
 
   return (
