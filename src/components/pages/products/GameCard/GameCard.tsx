@@ -9,9 +9,9 @@ const GameCard = function (props: GameCardType) {
         <img src={props.img} alt="overwatch" className={styles.image} />
         <div className={styles.front}>
           <div>{props.name.toUpperCase()}</div>
-          <div>{props.price}$</div>
+          <div>{props.price[0] === "0" ? props.price.slice(1) : props.price}$</div>
         </div>
-        <div className={styles.categories}>{props.categories.join(", ")}</div>
+        <div className={styles.categories}>{Object.keys(props.categories).join(", ")}</div>
         <div className={styles.flexible} />
         <Rating rating={props.rating} />
       </div>

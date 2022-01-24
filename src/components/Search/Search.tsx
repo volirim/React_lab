@@ -3,9 +3,10 @@ import styles from "./Search.module.scss";
 
 import SearchInput from "./SearchInput/SearchInput";
 import Loader from "./Loader/Loader";
+import loaderStyles from "./Loader/Loader.module.scss";
 import { CustomProps } from "@/types/searchBlockProps";
 
-const Search: React.FC<CustomProps> = function ({ updateGamesList, category }) {
+const Search: React.FC<CustomProps> = function ({ category, url }) {
   const [loaderDisplay, setDisplay] = useState(false);
 
   const updateDisplay = (value: boolean) => {
@@ -14,8 +15,8 @@ const Search: React.FC<CustomProps> = function ({ updateGamesList, category }) {
 
   return (
     <div className={styles.container}>
-      <SearchInput updateGamesList={updateGamesList} updateDisplay={updateDisplay} category={category} />
-      <Loader display={loaderDisplay} />
+      <SearchInput updateDisplay={updateDisplay} category={category} url={url} />
+      <Loader display={loaderDisplay} styleFirst={loaderStyles.circle} styleSecond={loaderStyles.none} />
     </div>
   );
 };

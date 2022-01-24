@@ -1,0 +1,23 @@
+@import "../../../../../assets/styles/parts/colors";
+
+.title {
+  font-size: 20px;
+  margin: 15px 0 5px 15px;
+  color: $white;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+}
+
+.formItem {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  font-size: 20px;
+  color: $white;
+}

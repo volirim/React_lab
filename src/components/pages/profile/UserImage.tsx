@@ -8,8 +8,9 @@ import { StoreInterface } from "@/redux/modules/reducersCombined";
 
 const ProfileImage = function () {
   const [url, setUrl] = useState("");
-  const { id, login, password, source } = useSelector((state: StoreInterface) => state.profile);
+  const { id, login, password } = useSelector((state: StoreInterface) => state.profile);
   const dispatch = useDispatch();
+  const [image, setImage] = useState("");
 
   window.onhashchange = () => setUrl(window.location.pathname);
 
@@ -24,13 +25,14 @@ const ProfileImage = function () {
           source: imageSrc,
         })
       );
+      setImage(imageSrc);
     }
     fetchData();
-  }, []);
+  }, [image]);
 
   return (
     <div className={styles.container}>
-      <img src={source} alt="no profile pic" className={styles.picture} />
+      <img src={image} alt="no profile pic" className={styles.picture} />
       <NavLink className="button" to={`${url}?modal=changeImage`}>
         Change profile image
       </NavLink>
