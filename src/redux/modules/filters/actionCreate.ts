@@ -25,4 +25,16 @@ const checkPriceToAction = (actionPayload: string) => ({
   payload: actionPayload,
 });
 
-export { checkGenresAction, checkAgeAction, checkRatingAction, checkPriceFromAction, checkPriceToAction };
+const checkClearAction = (actionPayload: string) => ({
+  type: filterActions.CLEAR_STATE_ACTION,
+  payload: actionPayload,
+});
+
+export {
+  checkGenresAction,
+  checkAgeAction,
+  checkRatingAction,
+  checkPriceFromAction,
+  checkPriceToAction,
+  checkClearAction,
+};

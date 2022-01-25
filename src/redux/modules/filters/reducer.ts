@@ -28,6 +28,15 @@ export default function filterReducer(state: FilterStateInterface = defaultState
       return { ...state, priceFrom: action.payload as string };
     case filterActions.SET_PRICE_TO_ACTION:
       return { ...state, priceTo: action.payload as string };
+    case filterActions.CLEAR_STATE_ACTION:
+      return {
+        ...state,
+        genres: action.payload as string,
+        age: action.payload as string,
+        rating: action.payload as string,
+        priceFrom: action.payload as string,
+        priceTo: action.payload as string,
+      };
     default:
       return state;
   }
