@@ -1,0 +1,27 @@
+@import "../../../../../assets/styles/parts/colors";
+
+.title {
+  font-size: 20px;
+  margin: 15px 0 5px 15px;
+  color: $white;
+}
+
+.input {
+  width: 90%;
+  margin-bottom: 10px;
+  font-size: 20px;
+  border-color: $white;
+  padding: 3px;
+  background-color: rgba(77, 77, 77, 0.582);
+}
+
+.input::-webkit-input-placeholder {
+  color: $white;
+}
+
+.text {
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 18px;
+  color: $white;
+}

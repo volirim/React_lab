@@ -1,20 +1,16 @@
 import { ChangeEvent } from "react";
+import { useDispatch } from "react-redux";
 import debounce from "../../../utils/debounce";
 // eslint-disable-next-line import/no-unresolved
 import styles from "./SearchInput.module.scss";
 import { SearchInputInterface } from "@/types/searchBlockProps";
-import splitCards from "@/utils/splitCards";
-import getGamesData from "@/api/getMockapiData";
+import checkSearchAction from "@/redux/modules/search/actionCreate";
 
-const SearchInput: React.FC<SearchInputInterface> = function ({ updateGamesList, updateDisplay, category }) {
+const SearchInput: React.FC<SearchInputInterface> = function ({ updateDisplay }) {
+  const dispatch = useDispatch();
   const delayedFunc = debounce(async (e: ChangeEvent<HTMLInputElement>) => {
     updateDisplay(false);
-    if (category) {
-      return updateGamesList(
-        e.target.value !== "" ? await splitCards(e.target.value, category) : await getGamesData("/games")
-      );
-    }
-    return updateGamesList(e.target.value !== "" ? await splitCards(e.target.value) : await getGamesData("/topgames"));
+    dispatch(checkSearchAction(e.target.value));
   }, 300);
 
   return (
@@ -22,12 +18,8 @@ const SearchInput: React.FC<SearchInputInterface> = function ({ updateGamesList,
       placeholder="Search"
       className={styles.input}
       onChange={(e) => {
-        console.log(e.target.value);
-
-        if (e.target.value !== "") {
-          updateDisplay(true);
-          delayedFunc(e);
-        }
+        updateDisplay(true);
+        delayedFunc(e);
       }}
     />
   );

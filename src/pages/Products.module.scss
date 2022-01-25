@@ -1,0 +1,15 @@
+.mainContainer {
+  display: flex;
+  flex-direction: row;
+
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: auto;
+}
+
+.gamesBlock {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  max-width: 80%;
+}

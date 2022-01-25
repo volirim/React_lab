@@ -12,12 +12,12 @@ export interface DefaultStateInterface {
 const persistConfig = {
   key: "root",
   storage,
+  blacklist: ["search", "filters"],
 };
 
 const persistedReducer = persistReducer(persistConfig, reducer);
 
 const store = createStore(persistedReducer);
-console.log(createStore(persistedReducer));
 
 export const persistor = persistStore(store);
 
