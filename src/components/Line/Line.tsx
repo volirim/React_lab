@@ -1,7 +1,9 @@
-import classes from "./Line.module.scss";
+interface LineInterface {
+  styleList: string;
+}
 
-const Line = function () {
-  return <div className={classes.line} />;
+const Line = function ({ styleList }: LineInterface) {
+  return <div className={styleList} />;
 };
 
 export default Line;

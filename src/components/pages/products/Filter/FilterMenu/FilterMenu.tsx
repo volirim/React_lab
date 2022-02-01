@@ -18,7 +18,7 @@ const FilterMenu = function ({ title, storeInfo, menuArray, checkActionCallback 
   return (
     <>
       <h4 className={styles.title}>{title}</h4>
-      <Line />
+      <Line styleList="line" />
       <form className={styles.form}>
         {menuArray.map((el) => (
           <FilterCheckbox genre={storeInfo} reduxCallback={checkActionCallback} name={el} />

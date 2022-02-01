@@ -22,8 +22,6 @@ const HEADER_MENU_AUTHORISED = [
   },
   ROUTES_AUTHORISED.about,
   ROUTES_AUTHORISED.account,
-  ROUTES_AUTHORISED.cart,
-  ROUTES_AUTHORISED.exit,
 ];
 
 function getMenu(userStatus: boolean) {

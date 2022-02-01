@@ -1,0 +1,30 @@
+@import "../../../../assets/styles/parts/colors";
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  flex-direction: row;
+}
+
+.item {
+  width: 16%;
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: $white;
+  align-self: center;
+  word-break: break-word;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: $white;
+  opacity: 0.5;
+}

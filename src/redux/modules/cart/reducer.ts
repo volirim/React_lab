@@ -1,0 +1,33 @@
+import CartItemType from "@/types/cartItemType";
+import cartActions from "./actions";
+import CartState from "./types";
+
+interface CartAction {
+  type: string;
+  payload: CartItemType;
+}
+
+const defaultState = {
+  cart: [],
+};
+
+export default function cartReducer(state: CartState = defaultState, action: CartAction | null = null) {
+  if (!action) return state;
+
+  switch (action.type) {
+    case cartActions.DELETE_CART_ACTION:
+      return { cart: [] };
+    case cartActions.SET_CART_ACTION:
+      return { ...state, cart: !state.cart ? [action.payload] : state.cart.concat(action.payload) };
+    case cartActions.CHANGE_CART_ACTION:
+      return { ...state, cart: !state.cart ? [action.payload] : state.cart.concat(action.payload) };
+    case cartActions.CHANGE_PLATFORM_ACTION:
+      return {
+        cart: state.cart.map((element) =>
+          element.name === action.payload.name ? { ...element, categories: action.payload.categories } : element
+        ),
+      };
+    default:
+      return state;
+  }
+}

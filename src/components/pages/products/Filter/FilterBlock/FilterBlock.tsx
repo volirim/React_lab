@@ -15,7 +15,7 @@ const FilterBlock = function () {
   return (
     <div className={styles.container}>
       <h3 className={styles.title}>PC</h3>
-      <Line />
+      <Line styleList="line" />
       <FilterByPrice />
       <FilterMenu title="Genres" storeInfo={genres} menuArray={GENRES} checkActionCallback={checkGenresAction} />
       <FilterMenu title="Age" storeInfo={age} menuArray={AGE} checkActionCallback={checkAgeAction} />

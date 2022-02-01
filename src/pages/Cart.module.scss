@@ -1,0 +1,35 @@
+@import "../assets/styles/parts/colors";
+
+.topBlock {
+  width: 90%;
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.titlesBlock {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.title {
+  width: 20%;
+  margin-bottom: 10px;
+  font-size: 25px;
+  color: $white;
+}
+
+.middleBlock {
+  flex-grow: 1;
+}
+
+.bottomBlock {
+  width: 90%;
+  margin-left: 30px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}

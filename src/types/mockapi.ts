@@ -1,4 +1,5 @@
 type GameCardType = {
+  id: string;
   name: string;
   img: string;
   categories: { pc?: string; playstation?: string; xbox?: string };

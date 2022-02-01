@@ -8,6 +8,7 @@ interface ItemInterface {
 interface SubMenuArray {
   name: string;
   path: string;
+  id: string;
 }
 
 interface MenuElementInterface {
