@@ -7,12 +7,9 @@ import checkProfileAction from "@/redux/modules/userProfile/actionCreate";
 import { StoreInterface } from "@/redux/modules/reducersCombined";
 
 const ProfileImage = function () {
-  const [url, setUrl] = useState("");
   const { id, login, password } = useSelector((state: StoreInterface) => state.profile);
   const dispatch = useDispatch();
   const [image, setImage] = useState("");
-
-  window.onhashchange = () => setUrl(window.location.pathname);
 
   useEffect(() => {
     async function fetchData() {
@@ -33,7 +30,7 @@ const ProfileImage = function () {
   return (
     <div className={styles.container}>
       <img src={image} alt="no profile pic" className={styles.picture} />
-      <NavLink className="button" to={`${url}?modal=changeImage`}>
+      <NavLink className="button" to="?modal=changeImage">
         Change profile image
       </NavLink>
     </div>

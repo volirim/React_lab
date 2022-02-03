@@ -52,6 +52,7 @@ const MainApp = function () {
               </PrivateRoute>
             }
           />
+
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </ErrorBoundary>

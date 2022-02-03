@@ -31,8 +31,6 @@ async function addGameToCart(name: string, categories: CategoriesInterface) {
     activePlatform: Object.keys(categories)[0],
   };
 
-  console.log(serverData.price);
-
   if (!repeatingGame.length) {
     store.dispatch(checkSetCartAction(data));
   }

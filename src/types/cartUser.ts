@@ -1,5 +1,6 @@
-interface CartUser {
-  name: string;
+import { UserLoginInterface } from "./userData";
+
+interface CartUser extends Omit<UserLoginInterface, "password"> {
   balance: string;
 }
 

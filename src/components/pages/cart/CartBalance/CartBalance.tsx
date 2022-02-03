@@ -11,18 +11,17 @@ import beautifyPrice from "@/utils/cart/priceBeautifier";
 const CartBalance = function () {
   const dispatch = useDispatch();
   const cart = useSelector((state: StoreInterface) => state.cart.cart);
-  const userName = useSelector((state: StoreInterface) => state.profile.login);
+  const userName = useSelector((state: StoreInterface) => state.profile.id);
 
   const [userData, setUserData] = useState({ id: "0", name: "none", balance: "0" });
   const [balance, setBalance] = useState("");
 
   useEffect(() => {
-    async function getServerBalance() {
-      const user = await getGamesData(`/cart?name=${userName}`);
+    (async function getServerBalance() {
+      const user = await getGamesData(`/cart?id=${userName}`);
       setUserData(user[0]);
       setBalance(beautifyPrice(parseFloat(user[0].balance)));
-    }
-    getServerBalance();
+    })();
   }, []);
 
   const onClickHandler = () => {
@@ -30,7 +29,7 @@ const CartBalance = function () {
       changeCartData("/cart", userData.id, (parseFloat(balance) - parseFloat(getFullPrice(cart))).toString());
       dispatch(checkClearCartAction());
       setBalance(beautifyPrice(parseFloat(balance) - parseFloat(getFullPrice(cart))).toString());
-    } else alert("Много набрал, другалек");
+    } else alert("You need to replenish the balance");
   };
 
   return (

@@ -1,4 +1,5 @@
 import CartItemType from "@/types/cartItemType";
+import changeCategories from "@/utils/redux/changeCategories";
 import cartActions from "./actions";
 import CartState from "./types";
 
@@ -23,9 +24,7 @@ export default function cartReducer(state: CartState = defaultState, action: Car
       return { ...state, cart: !state.cart ? [action.payload] : state.cart.concat(action.payload) };
     case cartActions.CHANGE_PLATFORM_ACTION:
       return {
-        cart: state.cart.map((element) =>
-          element.name === action.payload.name ? { ...element, categories: action.payload.categories } : element
-        ),
+        cart: changeCategories(state, action),
       };
     default:
       return state;

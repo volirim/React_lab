@@ -1,3 +1,4 @@
+import uniqId from "uniqid";
 import getGamesData from "@/api/getMockapiData";
 import createUser from "@/api/postMockapiData";
 import setGameCartData from "@/api/setGameCartData";
@@ -11,13 +12,16 @@ const onSubmitRegister = async (data: UserRegisterInterface) => {
   const response: UserServerInterface[] = await getGamesData("/user");
 
   if (validateRegisterData(data, response)) {
+    const id = uniqId();
     const newUser: UserLoginInterface = {
+      id,
       login: data.login.toLowerCase(),
       password: data.password.toLowerCase(),
     };
 
     const newCart: CartUser = {
-      name: data.login,
+      id,
+      login: data.login,
       balance: "4000",
     };
 

@@ -14,25 +14,18 @@ const validateArray = async (updateGamesList: (value: SetStateAction<never[]>) =
   const ratingUrl = () => (rating ? `&rating=${rating}` : "");
   const priceToUrl = () => {
     if (priceFrom.length !== 0 && priceTo.length === 0) {
-      console.log("first");
-
       return `&price_gte=${normalizedPrice(priceFrom)}`;
     }
     if (priceTo.length !== 0 && priceFrom.length === 0) {
-      console.log("second");
-
       return `&price_lte=${normalizedPrice(priceTo)}`;
     }
     if (priceFrom.length !== 0 && priceTo.length !== 0) {
-      console.log("third");
-
       return `&price_gte=${normalizedPrice(priceFrom)}&price_lte=${normalizedPrice(priceTo)}`;
     }
     return "";
   };
 
   const url = `/games?${nameUrl()}${genresUrl()}${ageUrl()}${ratingUrl()}${priceToUrl()}`;
-  console.log(url);
 
   if (!urlAdress) {
     const gamesArray = await getGamesData(genres || age || rating || priceFrom || priceTo || name ? url : "/games");

@@ -14,6 +14,7 @@ interface SubMenuArray {
 interface MenuElementInterface {
   item: ItemInterface;
   root?: boolean;
+  cartAmount?: string;
 }
 
 export default MenuElementInterface;

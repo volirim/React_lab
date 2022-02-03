@@ -1,8 +1,9 @@
 @import "../assets/styles/parts/colors";
 
 .topBlock {
+  padding-top: 30px;
+  margin: 0 30px 30px 30px;
   width: 90%;
-  margin: 30px;
   display: flex;
   flex-direction: column;
 }
