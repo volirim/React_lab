@@ -56,6 +56,11 @@
       "login": "denisman",
       "password": "123123",
       "description": ""
+    },
+    {
+      "id": "kz8bn0a4",
+      "login": "denis",
+      "password": "123123"
     }
   ],
   "topgames": [
@@ -102,6 +107,11 @@
       "id": "kz8atnbe",
       "login": "denisman",
       "balance": "1519.99"
+    },
+    {
+      "id": "kz8bn0a4",
+      "login": "denis",
+      "balance": "3896.04"
     }
   ]
 }
