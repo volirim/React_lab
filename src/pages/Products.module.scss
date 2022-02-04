@@ -1,10 +1,10 @@
 .mainContainer {
   display: flex;
   flex-direction: row;
-
   flex-grow: 1;
   flex-shrink: 0;
   flex-basis: auto;
+  background: url("../assets/images/back.png");
 }
 
 .gamesBlock {
