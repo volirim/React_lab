@@ -25,9 +25,7 @@ async function addGameToCart(name: string, categories: CategoriesInterface) {
     categories,
     orderDate: orderDateString,
     amount: repeatingGame.length ? (+repeatingGame[0].amount + 1).toString() : "1",
-    price: repeatingGame.length
-      ? (+serverData[0].price * (+repeatingGame[0].amount + 1)).toString()
-      : serverData[0].price,
+    price: serverData[0].price,
     activePlatform: Object.keys(categories)[0],
   };
 

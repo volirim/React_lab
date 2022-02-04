@@ -1,4 +1,5 @@
-import MOCK_API_URL from "@/constants/mockapiURL";
+import axios from "axios";
+import MOCK_API_URL, { ENDPOINTS } from "@/constants/mockapiURL";
 import deleteMockapiData from "./deleteMockapiData";
 
 interface UserInterface {
@@ -11,10 +12,8 @@ interface UserInterface {
 
 async function changeMockapiData(data: UserInterface) {
   await deleteMockapiData(data.id);
-  return fetch(`${MOCK_API_URL}/user`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json;charset=utf-8" },
-    body: JSON.stringify(data),
+  return axios.post(`${MOCK_API_URL}/${ENDPOINTS.user}`, {
+    ...data,
   });
 }
 
