@@ -1,0 +1,30 @@
+@import "../../../../assets/styles/parts/colors";
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.count {
+  user-select: none;
+  margin-right: 60px;
+}
+
+.buttonsContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  padding: 2px;
+  background: none;
+  border: none;
+  color: $white;
+  cursor: pointer;
+  user-select: none;
+}
+
+.button:hover {
+  background: $black;
+}

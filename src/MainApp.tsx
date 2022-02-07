@@ -9,6 +9,7 @@ import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import HocRoute from "./components/HocRoute";
 import Profile from "./pages/Profile";
 import NotFoundPage from "./pages/NotFound";
+import Cart from "./pages/Cart";
 
 const MainApp = function () {
   return (
@@ -43,7 +44,16 @@ const MainApp = function () {
               </PrivateRoute>
             }
           />
-          <Route path="*" element={<NotFoundPage />} />;
+          <Route
+            path="/cart"
+            element={
+              <PrivateRoute>
+                <Cart />
+              </PrivateRoute>
+            }
+          />
+
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </ErrorBoundary>
       <Footer />

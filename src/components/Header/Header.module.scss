@@ -15,9 +15,13 @@
   font-size: 35px;
   font-weight: bold;
   color: $white;
-  // border-bottom: 4px solid purple;
+  flex-grow: 1;
 }
 
 .title:active {
   color: $white;
+}
+
+.secondMenu {
+  display: flex;
 }

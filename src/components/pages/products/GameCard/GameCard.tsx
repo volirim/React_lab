@@ -1,6 +1,7 @@
 import styles from "./GameCard.module.scss";
 import GameCardType from "@/types/mockapi";
 import Rating from "./Rating";
+import addGameToCart from "@/utils/cart/addGameToCart";
 
 const GameCard = function (props: GameCardType) {
   return (
@@ -17,7 +18,7 @@ const GameCard = function (props: GameCardType) {
       </div>
       <div className={`${styles.side} ${styles.back}`}>
         <div>{props.description}</div>
-        <button className={styles.button} type="button" onClick={() => alert("Good product")}>
+        <button className={styles.button} type="button" onClick={() => addGameToCart(props.name, props.categories)}>
           Add to cart
         </button>
       </div>

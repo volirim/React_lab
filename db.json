@@ -48,106 +48,19 @@
         "survive": "true"
       },
       "age": "12"
-    },
-    {
-      "id": "4",
-      "name": "overwatch",
-      "img": "https://upload.wikimedia.org/wikipedia/ru/3/33/Overwatch_Origins_Edition_PC_cover.jpg",
-      "categories": {
-        "pc": "true"
-      },
-      "price": "24.99",
-      "rating": "5",
-      "description": "nice game overwatch",
-      "genres": {
-        "shooter": "true"
-      },
-      "age": "3"
-    },
-    {
-      "id": "5",
-      "name": "minecraft",
-      "img": "https://i.playground.ru/e/tj_3D6dvqOiM5DVoXOW3lQ.jpeg?600-600",
-      "categories": {
-        "pc": "true",
-        "playstation": "true",
-        "xbox": "true"
-      },
-      "price": "25.99",
-      "rating": "5",
-      "description": "nice game minecraft",
-      "genres": {
-        "survive": "true"
-      },
-      "age": "6"
-    },
-    {
-      "id": "5",
-      "name": "minecrffffffaft",
-      "img": "https://i.playground.ru/e/tj_3D6dvqOiM5DVoXOW3lQ.jpeg?600-600",
-      "categories": {
-        "pc": "true",
-        "playstation": "true",
-        "xbox": "true"
-      },
-      "price": "09",
-      "rating": "5",
-      "description": "nice game minecraft",
-      "genres": {
-        "survive": "true"
-      },
-      "age": "6"
-    },
-    {
-      "id": "6",
-      "name": "terraria",
-      "img": "https://cdn-products.eneba.com/resized-products/rxwue7h3qpaymbx3cczd_350x200_2x-0.jpg",
-      "categories": {
-        "pc": "true",
-        "playstation": "true",
-        "xbox": "true"
-      },
-      "price": "05.99",
-      "rating": "5",
-      "description": "nice game terraria",
-      "genres": {
-        "survive": "true"
-      },
-      "age": "12"
-    },
-    {
-      "id": "7",
-      "name": "overwaaatch",
-      "img": "https://upload.wikimedia.org/wikipedia/ru/3/33/Overwatch_Origins_Edition_PC_cover.jpg",
-      "categories": {
-        "pc": "true"
-      },
-      "price": "24,99",
-      "rating": "5",
-      "description": "nice game overwatch",
-      "genres": {
-        "shooter": "true"
-      },
-      "age": "3"
     }
   ],
   "user": [
     {
-      "createdAt": "2022-01-16T15:49:29.957Z",
-      "name": "Helen McGlynn",
-      "avatar": "https://cdn.fakercloud.com/avatars/brandonburke_128.jpg",
-      "id": "1",
-      "login": "volirim",
-      "password": "1234567",
-      "description": "",
-      "source": "https://games.mail.ru/hotbox/content_files/game/2021/04/05/e87913055eb94b7d9ddf5874193cd80b.jpg"
-    },
-    {
-      "id": "2",
+      "id": "kz8atnbe",
       "login": "denisman",
       "password": "123123",
-      "description": "",
-      "source": "https://games.mail.ru/hotbox/content_files/game/2021/04/05/e87913055eb94b7d9ddf5874193cd80b.jpg"
+      "description": ""
+    },
+    {
+      "id": "kz8bn0a4",
+      "login": "denis",
+      "password": "123123"
     }
   ],
   "topgames": [
@@ -187,6 +100,18 @@
       "price": "05.99",
       "rating": "5",
       "description": "nice game terraria"
+    }
+  ],
+  "cart": [
+    {
+      "id": "kz8atnbe",
+      "login": "denisman",
+      "balance": "1519.99"
+    },
+    {
+      "id": "kz8bn0a4",
+      "login": "denis",
+      "balance": "3896.04"
     }
   ]
 }

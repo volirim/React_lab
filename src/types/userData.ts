@@ -5,6 +5,7 @@ interface UserServerInterface {
 }
 
 interface UserLoginInterface {
+  id: string;
   login: string;
   password: string;
 }

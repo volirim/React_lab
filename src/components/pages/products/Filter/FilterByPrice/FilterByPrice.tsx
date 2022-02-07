@@ -13,7 +13,7 @@ const FilterByPrice = function () {
   return (
     <>
       <h4 className={styles.title}>Price</h4>
-      <Line />
+      <Line styleList="line" />
       <p className={styles.text}>From</p>
       <input type="text" className={styles.input} onChange={(e) => onChangeFromFunc(e)} />
       <p className={styles.text}>To</p>

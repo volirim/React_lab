@@ -8,11 +8,13 @@ interface ItemInterface {
 interface SubMenuArray {
   name: string;
   path: string;
+  id: string;
 }
 
 interface MenuElementInterface {
   item: ItemInterface;
   root?: boolean;
+  params?: string;
 }
 
 export default MenuElementInterface;

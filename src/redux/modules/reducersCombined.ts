@@ -1,6 +1,10 @@
 import { combineReducers } from "@reduxjs/toolkit";
 import authReducer from "./auth/reducer";
 import AuthState from "./auth/types";
+import balanceReducer from "./balance/reducer";
+import BalanceState from "./balance/types";
+import cartReducer from "./cart/reducer";
+import CartState from "./cart/types";
 import filterReducer from "./filters/reducer";
 import FilterStateInterface from "./filters/types";
 import searchReducer from "./search/reducer";
@@ -13,6 +17,8 @@ export interface StoreInterface {
   profile: ProfileStateInterface;
   filters: FilterStateInterface;
   search: SearchStateInterface;
+  cart: CartState;
+  balance: BalanceState;
 }
 
 export default combineReducers<StoreInterface>({
@@ -20,4 +26,6 @@ export default combineReducers<StoreInterface>({
   profile: profileReducer,
   filters: filterReducer,
   search: searchReducer,
+  cart: cartReducer,
+  balance: balanceReducer,
 });

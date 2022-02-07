@@ -4,10 +4,14 @@ import NavMenu from "./components/Menu";
 import styles from "./Header.module.scss";
 import { getMenu } from "../../constants/menus";
 import { StoreInterface } from "@/redux/modules/reducersCombined";
-// import { DefaultStateInterface } from "@/redux/authorisation";
+import MenuElement from "./components/MenuElement";
+import { cart, exit } from "@/constants/routesCartExit";
+import { selectAmount } from "@/redux/modules/cart/selectors";
 
 const Header = function () {
   const authorised = useSelector((state: StoreInterface) => state.auth.authorised);
+  const store = useSelector((state: StoreInterface) => state);
+  const cartAmount = selectAmount(store);
 
   return (
     <header className={styles.container}>
@@ -15,6 +19,12 @@ const Header = function () {
         Game Store
       </NavLink>
       <NavMenu menu={getMenu(authorised)} />
+      {authorised ? (
+        <div className={styles.secondMenu}>
+          <MenuElement item={cart} params={` ${cartAmount}`} />
+          <MenuElement item={exit} />
+        </div>
+      ) : null}
     </header>
   );
 };
