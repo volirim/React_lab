@@ -11,6 +11,7 @@ import { selectAmount } from "@/redux/modules/cart/selectors";
 const Header = function () {
   const authorised = useSelector((state: StoreInterface) => state.auth.authorised);
   const store = useSelector((state: StoreInterface) => state);
+  const cartAmount = selectAmount(store);
 
   return (
     <header className={styles.container}>
@@ -20,7 +21,7 @@ const Header = function () {
       <NavMenu menu={getMenu(authorised)} />
       {authorised ? (
         <div className={styles.secondMenu}>
-          <MenuElement item={cart} params={` ${selectAmount(store)}`} />
+          <MenuElement item={cart} params={` ${cartAmount}`} />
           <MenuElement item={exit} />
         </div>
       ) : null}

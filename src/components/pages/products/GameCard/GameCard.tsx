@@ -4,7 +4,7 @@ import GameCardType from "@/types/mockapi";
 import Rating from "./Rating";
 import addGameToCart from "@/utils/cart/addGameToCart";
 import { StoreInterface } from "@/redux/modules/reducersCombined";
-import isAdminSelector from "@/redux/modules/userProfile/selectors";
+import { isAdminSelector } from "@/redux/modules/userProfile/selectors";
 
 const GameCard = function (props: GameCardType) {
   const store = useSelector((state: StoreInterface) => state);

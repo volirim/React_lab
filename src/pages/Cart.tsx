@@ -5,9 +5,11 @@ import CartItem from "@/components/pages/cart/CartItem/CartItem";
 import styles from "./Cart.module.scss";
 import CartItemType from "@/types/cartItemType";
 import { StoreInterface } from "@/redux/modules/reducersCombined";
+import { cartSelector } from "@/redux/modules/cart/selectors";
 
 const Cart = function () {
-  const gamesList = useSelector((state: StoreInterface) => state.cart.cart);
+  const store = useSelector((state: StoreInterface) => state);
+  const gamesList = cartSelector(store);
 
   return (
     <div className="main-container">
@@ -26,7 +28,7 @@ const Cart = function () {
         <Line styleList="lineCart" />
         <div className={styles.middleBlock}>
           {gamesList.map((element: CartItemType) => (
-            <CartItem name={element.name} />
+            <CartItem key={element.id} name={element.name} />
           ))}
         </div>
         <CartBalance />
