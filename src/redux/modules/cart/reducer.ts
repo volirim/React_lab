@@ -12,7 +12,21 @@ const defaultState = {
   cart: [],
 };
 
-export default function cartReducer(state: CartState = defaultState, action: CartAction | null = null) {
+export default function cartReducer(
+  state: CartState = defaultState,
+  action: CartAction = {
+    type: "",
+    payload: {
+      id: "",
+      name: "",
+      categories: { pc: "", playstation: "", xbox: "" },
+      orderDate: "",
+      amount: "",
+      price: "",
+      activePlatform: "",
+    },
+  }
+) {
   if (!action) return state;
 
   switch (action.type) {

@@ -5,7 +5,6 @@ import beautifyPrice from "./priceBeautifier";
 
 function getFullPrice(cartItemsArray: CartItemType[]) {
   const prices = cartItemsArray.map((item) => parseInt(item.amount, 10) * parseFloat(item.price));
-  console.log(cartItemsArray);
 
   return beautifyPrice(_.sum(prices));
 }

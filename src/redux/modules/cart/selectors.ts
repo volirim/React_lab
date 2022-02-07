@@ -16,4 +16,9 @@ const activePlatformSelector = createSelector(
   (cartItems) => (name: string) => Object.keys(cartItems.find((cartItem) => cartItem.name === name)!.categories)[0]
 );
 
-export { selectAmount, activePlatformSelector };
+const cartCurrentGameSelector = createSelector(
+  cartSelector,
+  (cartItems) => (name: string) => cartItems.find((element) => element.name === name)!
+);
+
+export { selectAmount, activePlatformSelector, cartSelector, cartCurrentGameSelector };

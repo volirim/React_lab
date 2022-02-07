@@ -1,3 +1,4 @@
+import uniqID from "uniqid";
 import getGamesData from "@/api/getMockapiData";
 import { checkChangeCartAction, checkClearCartAction, checkSetCartAction } from "@/redux/modules/cart/actionCreate";
 import store from "@/redux/store";
@@ -27,6 +28,7 @@ async function addGameToCart(name: string, categories: CategoriesInterface) {
     amount: repeatingGame.length ? (+repeatingGame[0].amount + 1).toString() : "1",
     price: serverData[0].price,
     activePlatform: Object.keys(categories)[0],
+    id: uniqID(),
   };
 
   if (!repeatingGame.length) {

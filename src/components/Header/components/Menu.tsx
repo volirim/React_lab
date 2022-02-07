@@ -7,7 +7,7 @@ const NavMenu = function ({ menu, root = true }: MenuInterface) {
   return (
     <ul className={classesList}>
       {menu.map((item) => (
-        <MenuElement item={item} />
+        <MenuElement key={item.id} item={item} />
       ))}
     </ul>
   );

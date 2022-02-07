@@ -1,20 +1,19 @@
-import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import PlatformMenu from "@/components/UI/PlatformMenu/PlatformMenu";
-import { StoreInterface } from "@/redux/modules/reducersCombined";
 import deleteGameCard from "@/utils/cart/deleteGameCard";
 import Amount from "../Amount/Amount";
 import styles from "./CartItem.module.scss";
 import getGamesData from "@/api/getMockapiData";
 import beautifyPrice from "@/utils/cart/priceBeautifier";
+import { cartCurrentGameSelector } from "@/redux/modules/cart/selectors";
+import store from "@/redux/store";
 
 interface CartItemInterface {
   name: string;
 }
 
 const CartItem = function ({ name }: CartItemInterface) {
-  const gamesList = useSelector((state: StoreInterface) => state.cart.cart);
-  const currentGame = gamesList.filter((element) => element.name === name)[0];
+  const currentGame = cartCurrentGameSelector(store.getState())(name);
   const [serverPrice, setServerPrice] = useState("0");
 
   useEffect(() => {
