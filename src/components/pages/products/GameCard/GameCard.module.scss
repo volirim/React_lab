@@ -69,6 +69,9 @@
 }
 
 .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 35%;
   padding: 15px;
   border: none;
@@ -76,6 +79,7 @@
   transition: 0.2s;
   color: $white;
   background: #562370;
+  text-decoration: none;
 }
 
 .button:hover {

@@ -1,14 +1,17 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
 import styles from "./GameCard.module.scss";
 import GameCardType from "@/types/mockapi";
 import Rating from "./Rating";
 import addGameToCart from "@/utils/cart/addGameToCart";
 import { StoreInterface } from "@/redux/modules/reducersCombined";
 import { isAdminSelector } from "@/redux/modules/userProfile/selectors";
+import { setGameCard } from "@/redux/modules/gameCardEditor/gameCardEditor";
 
 const GameCard = function (props: GameCardType) {
   const store = useSelector((state: StoreInterface) => state);
   const isAdmin = isAdminSelector(store);
+  const dispatch = useDispatch();
 
   return (
     <div className={styles.card}>
@@ -29,9 +32,14 @@ const GameCard = function (props: GameCardType) {
             Add to cart
           </button>
           {isAdmin ? (
-            <button className={styles.button} type="button">
+            <NavLink
+              className={styles.button}
+              type="button"
+              to="?modal=editGameCard"
+              onClick={() => dispatch(setGameCard({ ...props }))}
+            >
               Edit
-            </button>
+            </NavLink>
           ) : null}
         </div>
       </div>

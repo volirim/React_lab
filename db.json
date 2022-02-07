@@ -68,7 +68,10 @@
       },
       "price": "24.99",
       "rating": "5",
-      "description": "nice game overwatch"
+      "description": "nice game overwatch",
+      "genres": {
+        "shooter": "true"
+      }
     },
     {
       "id": "2",
@@ -81,7 +84,10 @@
       },
       "price": "25.99",
       "rating": "4",
-      "description": "nice game minecraft"
+      "description": "nice game minecraft",
+      "genres": {
+        "survive": "true"
+      }
     },
     {
       "id": "3",
@@ -94,7 +100,10 @@
       },
       "price": "05.99",
       "rating": "5",
-      "description": "nice game terraria"
+      "description": "nice game terraria",
+      "genres": {
+        "survive": "true"
+      }
     }
   ],
   "cart": [

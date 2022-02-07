@@ -23,11 +23,10 @@ const GameCardsBlock = function ({ category, urlAdress }: cardsBlockType) {
   );
 
   useEffect(() => {
-    async function setGames() {
+    (async function setGames() {
       const list = await validateArray(updateGamesList, urlAdress);
       setGamesList(list);
-    }
-    setGames();
+    })();
   }, [genres, age, rating, priceFrom, priceTo, games]);
 
   return (
