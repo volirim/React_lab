@@ -14,6 +14,7 @@ const MODAL_LIST: ModalList = {
   logOut: () => <SignOutModal />,
   changePassword: () => <PasswordChangeModal />,
   changeImage: () => <ImageChangeModal />,
+  editGameCard: () => <></>,
   nothing: () => <></>,
 };
 

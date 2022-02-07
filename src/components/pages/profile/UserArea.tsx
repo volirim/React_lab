@@ -15,7 +15,7 @@ interface DataInterface {
 
 const UserArea = function () {
   const { register, handleSubmit } = useForm();
-  const { login, description, id, password } = useSelector((state: StoreInterface) => state.profile);
+  const { login, description, id, password, isAdmin } = useSelector((state: StoreInterface) => state.profile);
 
   const [url, setUrl] = useState("");
   window.onhashchange = () => setUrl(window.location.pathname);
@@ -27,6 +27,7 @@ const UserArea = function () {
         login: data.login,
         password,
         description: data.description,
+        isAdmin,
       })
     );
     return loginChangeValidation(data);

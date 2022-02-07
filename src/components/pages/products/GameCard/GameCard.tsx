@@ -1,9 +1,15 @@
+import { useSelector } from "react-redux";
 import styles from "./GameCard.module.scss";
 import GameCardType from "@/types/mockapi";
 import Rating from "./Rating";
 import addGameToCart from "@/utils/cart/addGameToCart";
+import { StoreInterface } from "@/redux/modules/reducersCombined";
+import isAdminSelector from "@/redux/modules/userProfile/selectors";
 
 const GameCard = function (props: GameCardType) {
+  const store = useSelector((state: StoreInterface) => state);
+  const isAdmin = isAdminSelector(store);
+
   return (
     <div className={styles.card}>
       <div className={styles.side}>
@@ -18,9 +24,16 @@ const GameCard = function (props: GameCardType) {
       </div>
       <div className={`${styles.side} ${styles.back}`}>
         <div>{props.description}</div>
-        <button className={styles.button} type="button" onClick={() => addGameToCart(props.name, props.categories)}>
-          Add to cart
-        </button>
+        <div className={isAdmin ? styles.buttonsContainer : ""}>
+          <button className={styles.button} type="button" onClick={() => addGameToCart(props.name, props.categories)}>
+            Add to cart
+          </button>
+          {isAdmin ? (
+            <button className={styles.button} type="button">
+              Edit
+            </button>
+          ) : null}
+        </div>
       </div>
     </div>
   );

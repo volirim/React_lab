@@ -7,7 +7,7 @@ import checkProfileAction from "@/redux/modules/userProfile/actionCreate";
 import { StoreInterface } from "@/redux/modules/reducersCombined";
 
 const ProfileImage = function () {
-  const { id, login, password } = useSelector((state: StoreInterface) => state.profile);
+  const { id, login, password, isAdmin } = useSelector((state: StoreInterface) => state.profile);
   const dispatch = useDispatch();
   const [image, setImage] = useState("");
 
@@ -20,6 +20,7 @@ const ProfileImage = function () {
           login,
           password,
           source: imageSrc,
+          isAdmin,
         })
       );
       setImage(imageSrc);

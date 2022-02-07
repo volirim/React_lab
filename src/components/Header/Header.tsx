@@ -20,7 +20,7 @@ const Header = function () {
       <NavMenu menu={getMenu(authorised)} />
       {authorised ? (
         <div className={styles.secondMenu}>
-          <MenuElement item={cart} cartAmount={` ${selectAmount(store)}`} />
+          <MenuElement item={cart} params={` ${selectAmount(store)}`} />
           <MenuElement item={exit} />
         </div>
       ) : null}

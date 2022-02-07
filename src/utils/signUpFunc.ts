@@ -17,12 +17,14 @@ const onSubmitRegister = async (data: UserRegisterInterface) => {
       id,
       login: data.login.toLowerCase(),
       password: data.password.toLowerCase(),
+      isAdmin: false,
     };
 
     const newCart: CartUser = {
       id,
       login: data.login,
       balance: "4000",
+      isAdmin: false,
     };
 
     await createUser(newUser);

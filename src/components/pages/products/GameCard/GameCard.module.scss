@@ -63,6 +63,11 @@
   transform: rotateY(180deg);
 }
 
+.buttonsContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
 .button {
   width: 35%;
   padding: 15px;

@@ -6,6 +6,7 @@ interface ProfileInterface {
   login: string;
   password: string;
   description?: string;
+  isAdmin: boolean;
 }
 
 interface DataInterface {
@@ -14,12 +15,13 @@ interface DataInterface {
 }
 
 function changeMockapiLogin(data: DataInterface) {
-  const { id, password, description } = store.getState().profile;
+  const { id, password, description, isAdmin } = store.getState().profile;
 
   const newData: ProfileInterface = {
     id,
     login: data.login,
     password,
+    isAdmin,
   };
 
   if (data.description.length) {
