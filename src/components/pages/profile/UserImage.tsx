@@ -7,7 +7,7 @@ import checkProfileAction from "@/redux/modules/userProfile/actionCreate";
 import { StoreInterface } from "@/redux/modules/reducersCombined";
 
 const ProfileImage = function () {
-  const { id, login, password } = useSelector((state: StoreInterface) => state.profile);
+  const { id, login, password, source } = useSelector((state: StoreInterface) => state.profile);
   const dispatch = useDispatch();
   const [image, setImage] = useState("");
 
@@ -29,7 +29,7 @@ const ProfileImage = function () {
 
   return (
     <div className={styles.container}>
-      <img src={image} alt="no profile pic" className={styles.picture} />
+      <img src={source} alt="no profile pic" className={styles.picture} />
       <NavLink className="button" to="?modal=changeImage">
         Change profile image
       </NavLink>

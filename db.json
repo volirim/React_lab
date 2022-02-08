@@ -52,15 +52,11 @@
   ],
   "user": [
     {
-      "id": "kz8atnbe",
-      "login": "denisman",
+      "id": "kzec2npu",
+      "login": "volirim",
       "password": "123123",
-      "description": ""
-    },
-    {
-      "id": "kz8bn0a4",
-      "login": "denis",
-      "password": "123123"
+      "description": "Ya debil",
+      "source": "https://cyber.pressball.by/wp-content/uploads/2021/08/ting-ba-20.jpg"
     }
   ],
   "topgames": [
@@ -112,6 +108,11 @@
       "id": "kz8bn0a4",
       "login": "denis",
       "balance": "3896.04"
+    },
+    {
+      "id": "kzec2npu",
+      "login": "volirim",
+      "balance": "3870.05"
     }
   ]
 }

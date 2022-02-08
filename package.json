@@ -78,7 +78,6 @@
     "eslint-plugin-unused-imports": "^2.0.0",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "html-webpack-plugin": "^5.5.0",
-    "husky": "^7.0.4",
     "lint-staged": "^12.1.2",
     "markdownlint": "^0.24.0",
     "markdownlint-cli": "^0.30.0",
