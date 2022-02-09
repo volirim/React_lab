@@ -9,17 +9,21 @@ import validateArray from "@/utils/filterBlockValidators/arrayValidation";
 import { StoreInterface } from "@/redux/modules/reducersCombined";
 import useLoader from "@/hooks/useLoader/useLoader";
 import loaderStyles from "../../../../hooks/useLoader/useLoader.module.scss";
+import filtersSelector from "@/redux/modules/filters/selectors";
+import activeGameSelector from "@/redux/modules/gameCardEditor/selectors";
 
 const GameCardsBlock = function ({ category, urlAdress }: cardsBlockType) {
+  const store = useSelector((state: StoreInterface) => state);
   const [gamesList, setGamesList] = useState([]);
   const updateGamesList = (value: SetStateAction<never[]>) => setGamesList(value);
-  const { genres, age, rating, priceFrom, priceTo } = useSelector((state: StoreInterface) => state.filters);
+  const { genres, age, rating, priceFrom, priceTo } = filtersSelector(store);
+  const activeGame = activeGameSelector(store);
   const { games } = useSelector((state: StoreInterface) => state.search);
 
   const loader = useLoader(
     loaderStyles.circle,
     loaderStyles.none,
-    filterCategories(gamesList, category).map((element) => <GameCard {...element} />)
+    filterCategories(gamesList, category).map((element) => <GameCard data={element} urlAddress={urlAdress} />)
   );
 
   useEffect(() => {
@@ -27,7 +31,7 @@ const GameCardsBlock = function ({ category, urlAdress }: cardsBlockType) {
       const list = await validateArray(updateGamesList, urlAdress);
       setGamesList(list);
     })();
-  }, [genres, age, rating, priceFrom, priceTo, games]);
+  }, [genres, age, rating, priceFrom, priceTo, games, activeGame]);
 
   return (
     <div className={cardsBlockStyles.container}>

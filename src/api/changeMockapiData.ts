@@ -11,7 +11,7 @@ interface UserInterface {
 }
 
 async function changeMockapiData(data: UserInterface) {
-  await deleteMockapiData(data.id);
+  await deleteMockapiData(data.id, ENDPOINTS.user);
   return axios.post(`${MOCK_API_URL}/${ENDPOINTS.user}`, {
     ...data,
   });

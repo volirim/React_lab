@@ -7,6 +7,12 @@
   background: url("../assets/images/back.png");
 }
 
+.searchBlock {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
+
 .gamesBlock {
   display: flex;
   flex-direction: column;

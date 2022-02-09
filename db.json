@@ -5,49 +5,49 @@
       "name": "overwatch",
       "img": "https://upload.wikimedia.org/wikipedia/ru/3/33/Overwatch_Origins_Edition_PC_cover.jpg",
       "categories": {
-        "pc": "true"
+        "pc": "true",
+        "playstation": "true",
+        "xbox": "true"
       },
       "price": "24.99",
-      "rating": "5",
+      "rating": "3",
       "description": "nice game overwatch",
       "genres": {
         "shooter": "true"
       },
-      "age": "3"
-    },
-    {
-      "id": "2",
-      "name": "minecraft",
-      "img": "https://i.playground.ru/e/tj_3D6dvqOiM5DVoXOW3lQ.jpeg?600-600",
-      "categories": {
-        "pc": "true",
-        "playstation": "true",
-        "xbox": "true"
-      },
-      "price": "25.99",
-      "rating": "5",
-      "description": "nice game minecraft",
-      "genres": {
-        "survive": "true"
-      },
       "age": "6"
     },
     {
-      "id": "3",
-      "name": "terraria",
-      "img": "https://cdn-products.eneba.com/resized-products/rxwue7h3qpaymbx3cczd_350x200_2x-0.jpg",
+      "id": "kzfjwgq1",
+      "name": "Dota 2",
+      "img": "https://upload.wikimedia.org/wikipedia/ru/8/8e/%D0%9E%D0%B1%D0%BB%D0%BE%D0%B6%D0%BA%D0%B0_Dota_2.jpg",
+      "categories": {
+        "pc": "true"
+      },
+      "price": "11.99",
+      "rating": "3",
+      "description": "nice game dota 2",
+      "genres": {
+        "strategy": "true"
+      },
+      "age": "18"
+    },
+    {
+      "id": "kzfk02i1",
+      "name": "terrariaa",
+      "img": "https://s3.gaming-cdn.com/images/products/932/orig/game-steam-terraria-cover.jpg",
       "categories": {
         "pc": "true",
         "playstation": "true",
         "xbox": "true"
       },
-      "price": "05.99",
-      "rating": "4",
+      "price": "6.99",
+      "rating": "3",
       "description": "nice game terraria",
       "genres": {
         "survive": "true"
       },
-      "age": "12"
+      "age": "8"
     }
   ],
   "user": [
@@ -71,23 +71,23 @@
       "description": "nice game overwatch",
       "genres": {
         "shooter": "true"
-      }
+      },
+      "age": "3"
     },
     {
       "id": "2",
-      "name": "minecraft",
+      "name": "over",
       "img": "https://i.playground.ru/e/tj_3D6dvqOiM5DVoXOW3lQ.jpeg?600-600",
       "categories": {
-        "pc": "true",
-        "playstation": "true",
-        "xbox": "true"
+        "pc": "true"
       },
-      "price": "25.99",
-      "rating": "4",
-      "description": "nice game minecraft",
+      "price": "40",
+      "rating": "3",
+      "description": "ТОПОВАЯ ИГРУХА",
       "genres": {
-        "survive": "true"
-      }
+        "strategy": "true"
+      },
+      "age": "12"
     },
     {
       "id": "3",
@@ -99,11 +99,12 @@
         "xbox": "true"
       },
       "price": "05.99",
-      "rating": "5",
+      "rating": "4",
       "description": "nice game terraria",
       "genres": {
         "survive": "true"
-      }
+      },
+      "age": "12"
     }
   ],
   "cart": [

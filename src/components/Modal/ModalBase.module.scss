@@ -73,7 +73,7 @@
   z-index: 3000;
 }
 
-.input {
+%input-shared {
   margin: 15px;
   padding: 15px;
   border-radius: 15px;
@@ -81,6 +81,10 @@
   background: #121213;
   font-size: 20px;
   color: $white;
+}
+
+.input {
+  @extend %input-shared;
 }
 
 .input:placeholder-shown {
