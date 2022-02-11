@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import GameCardType from "@/types/mockapi";
+import createGameCardObject from "@/utils/cardEditModal/createGameCardObject";
 
 interface ValueInterface extends GameCardType {
   params: {
@@ -12,19 +13,20 @@ export interface InitialStateInterface {
   value: ValueInterface;
 }
 
-const initialState = { value: {} } as InitialStateInterface;
+const initialState = { value: createGameCardObject() } as InitialStateInterface;
 
 const gameCardSlice = createSlice({
   name: "gameCard",
   initialState,
   reducers: {
-    setGameCard: (_state, action: PayloadAction<ValueInterface>) => {
-      const newState = { value: { ...action.payload } };
-      return newState;
-    },
+    setGameCard: (_state, action: PayloadAction<ValueInterface>) => ({ value: { ...action.payload } }),
+    setGenres: (state, action: PayloadAction<{ [key: string]: string }>) => ({
+      ...state,
+      genres: { ...action.payload },
+    }),
   },
 });
 
-export const { setGameCard } = gameCardSlice.actions;
+export const { setGameCard, setGenres } = gameCardSlice.actions;
 
 export default gameCardSlice.reducer;

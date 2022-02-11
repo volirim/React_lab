@@ -32,7 +32,7 @@ const GameCard = function ({ data, urlAddress }: GameCard) {
       </div>
       <div className={`${styles.side} ${styles.back}`}>
         <div>{data.description}</div>
-        <div className={isAdmin ? styles.buttonsContainer : ""}>
+        <div className={isAdmin ? styles.buttonsContainer : styles.nonAdminButtonsContainer}>
           <button className={styles.button} type="button" onClick={() => addGameToCart(data.name, data.categories)}>
             Add to cart
           </button>

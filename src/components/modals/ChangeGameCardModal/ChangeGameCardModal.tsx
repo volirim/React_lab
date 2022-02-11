@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router";
-import uniqID from "uniqid";
 import { useForm } from "react-hook-form";
 import ModalRoot from "@/components/Modal/ModalBase";
 import { StoreInterface } from "@/redux/modules/reducersCombined";
@@ -16,7 +15,7 @@ import normalizeData from "@/utils/cardEditModal/normalizeData";
 import { setGameCard } from "@/redux/modules/gameCardEditor/gameCardEditor";
 import deleteMockapiData from "@/api/deleteMockapiData";
 import { ENDPOINTS } from "@/constants/mockapiURL";
-import createGameCardObject from "@/constants/gameCardObject";
+import createGameCardObject from "@/utils/cardEditModal/createGameCardObject";
 
 const ChangeGameCardModal = function () {
   const store = useSelector((state: StoreInterface) => state);
@@ -80,11 +79,11 @@ const ChangeGameCardModal = function () {
                 >
                   {GENRES.map((element) => (
                     <option
-                      disabled={element === ""}
-                      key={uniqID()}
-                      selected={`${Object.keys(activeGame.genres)[0]}` === element}
+                      disabled={!element.name}
+                      key={element.key}
+                      selected={`${Object.keys(activeGame.genres)[0]}` === element.name}
                     >
-                      {element}
+                      {element.name}
                     </option>
                   ))}
                 </select>
@@ -109,8 +108,8 @@ const ChangeGameCardModal = function () {
                 <h4>Age</h4>
                 <select className={styles.input} form="changeGameCardForm" {...register("age")}>
                   {AGES.map((element) => (
-                    <option disabled={element === ""} key={uniqID()} selected={`${activeGame.age}+` === element}>
-                      {element}
+                    <option disabled={!element.name} key={element.key} selected={`${activeGame.age}+` === element.name}>
+                      {element.name}
                     </option>
                   ))}
                 </select>
@@ -121,7 +120,8 @@ const ChangeGameCardModal = function () {
                 <input
                   type="checkbox"
                   className={styles.checkbox}
-                  onChange={(e) => (e.target.value ? { ...register(`categories.pc`) } : null)}
+                  defaultChecked={!!activeGame.categories.pc}
+                  {...register(`categories.pc`)}
                 />
               </div>
               <div className={styles.inputContainer}>
@@ -129,7 +129,8 @@ const ChangeGameCardModal = function () {
                 <input
                   type="checkbox"
                   className={styles.checkbox}
-                  onChange={(e) => (e.target.value ? { ...register(`categories.playstation`) } : null)}
+                  defaultChecked={!!activeGame.categories.playstation}
+                  {...register(`categories.playstation`)}
                 />
               </div>
               <div className={styles.inputContainer}>
@@ -137,7 +138,8 @@ const ChangeGameCardModal = function () {
                 <input
                   type="checkbox"
                   className={styles.checkbox}
-                  onChange={(e) => (e.target.value ? { ...register(`categories.xbox`) } : null)}
+                  defaultChecked={!!activeGame.categories.xbox}
+                  {...register(`categories.xbox`)}
                 />
               </div>
             </form>

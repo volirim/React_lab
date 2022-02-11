@@ -3,9 +3,9 @@ interface FormInterface {
   age: string;
   categories:
     | {
-        pc?: undefined;
-        playstation?: undefined;
-        xbox?: undefined;
+        pc?: boolean;
+        playstation?: boolean;
+        xbox?: boolean;
       }
     | undefined;
   description: string;

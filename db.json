@@ -22,7 +22,9 @@
       "name": "Dota 2",
       "img": "https://upload.wikimedia.org/wikipedia/ru/8/8e/%D0%9E%D0%B1%D0%BB%D0%BE%D0%B6%D0%BA%D0%B0_Dota_2.jpg",
       "categories": {
-        "pc": "true"
+        "pc": "true",
+        "playstation": "true",
+        "xbox": "true"
       },
       "price": "11.99",
       "rating": "3",
@@ -56,6 +58,12 @@
       "login": "denisman",
       "password": "123123",
       "isAdmin": true
+    },
+    {
+      "id": "kzgts154",
+      "login": "aboba",
+      "password": "123123",
+      "isAdmin": false
     }
   ],
   "topgames": [
@@ -76,18 +84,20 @@
     },
     {
       "id": "2",
-      "name": "over",
+      "name": "minecraft",
       "img": "https://i.playground.ru/e/tj_3D6dvqOiM5DVoXOW3lQ.jpeg?600-600",
       "categories": {
-        "pc": "true"
+        "pc": "true",
+        "playstation": "true",
+        "xbox": "true"
       },
-      "price": "40",
+      "price": "25.99",
       "rating": "3",
       "description": "ТОПОВАЯ ИГРУХА",
       "genres": {
-        "strategy": "true"
+        "survive": "true"
       },
-      "age": "12"
+      "age": "8"
     },
     {
       "id": "3",
@@ -111,6 +121,12 @@
     {
       "id": "kzcjaps4",
       "login": "denisman",
+      "balance": "4000",
+      "isAdmin": false
+    },
+    {
+      "id": "kzgts154",
+      "login": "aboba",
       "balance": "4000",
       "isAdmin": false
     }

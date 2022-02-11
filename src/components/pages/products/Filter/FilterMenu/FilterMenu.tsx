@@ -10,7 +10,7 @@ interface reduxCallbackInterface {
 interface FilterMenuInterface {
   title: string;
   storeInfo: string | undefined;
-  menuArray: string[];
+  menuArray: { key: string; name: string }[];
   checkActionCallback: (actionPayload: string) => reduxCallbackInterface;
 }
 
@@ -21,7 +21,7 @@ const FilterMenu = function ({ title, storeInfo, menuArray, checkActionCallback 
       <Line styleList="line" />
       <form className={styles.form}>
         {menuArray.map((el) => (
-          <FilterCheckbox genre={storeInfo} reduxCallback={checkActionCallback} name={el} />
+          <FilterCheckbox genre={storeInfo} reduxCallback={checkActionCallback} name={el.name} />
         ))}
       </form>
     </>

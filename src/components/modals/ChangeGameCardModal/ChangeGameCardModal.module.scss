@@ -1,5 +1,6 @@
 @import "../../../assets/styles/parts/colors";
 @import "../../../assets/styles/parts/input";
+@import "../../../assets/styles/parts/position";
 
 .topContainer {
   width: 100%;
@@ -16,6 +17,7 @@
 
 .image {
   max-width: 250px;
+  width: 100%;
   height: auto;
 }
 
@@ -46,20 +48,20 @@
   padding: 5px 15px 15px 15px;
   border-radius: 15px;
   border: 2px solid $white;
-  background: #121213;
+  background: $black;
   font-size: 20px;
   color: $white;
   resize: none;
 }
 
 .description::-webkit-scrollbar {
+  background: $transpanent;
   width: 5px;
-  background: transparent;
   border-radius: 15px;
 }
 
 .description::-webkit-scrollbar-track {
-  background: transparent;
+  background: $transpanent;
 }
 
 .description::-webkit-scrollbar-thumb {
@@ -68,20 +70,18 @@
 }
 
 .description::-webkit-scrollbar-track-piece:end {
+  background: $transpanent;
   margin-bottom: 10px;
-  background: transparent;
 }
 
 .description::-webkit-scrollbar-track-piece:start {
+  background: $transpanent;
   margin-top: 10px;
-  background: transparent;
 }
 
 .checkbox {
-  margin: 15px;
-  padding: 5px 15px 15px 15px;
-  border-radius: 15px;
-  background: #121213;
+  @include checkboxmarginsAndPadding;
+  background: $black;
   font-size: 20px;
   color: $white;
   resize: none;

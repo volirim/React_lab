@@ -2,14 +2,16 @@ import editGameCardData from "@/api/editGameCardData";
 import getGamesData from "@/api/getMockapiData";
 import postGameCard from "@/api/postGameCard";
 import MOCK_API_URL, { ENDPOINTS } from "@/constants/mockapiURL";
+import SET_CARD from "@/constants/typeOfEditCardEvent";
 import { setGameCard } from "@/redux/modules/gameCardEditor/gameCardEditor";
 import store from "@/redux/store";
 import FormInterface from "@/types/formInterface";
 import GameCardType from "@/types/mockapi";
+import normilizeGenres from "./normalizeCategories";
 
 const normalizeData = async (data: FormInterface, id: string, urlAddress: string | undefined, typeOfEvent: string) => {
   const serverData: GameCardType =
-    typeOfEvent === "setCard"
+    typeOfEvent === SET_CARD
       ? { genres: { shooter: "true" }, categories: { pc: "true" } }
       : await getGamesData(`/${urlAddress ? ENDPOINTS.topGames : ENDPOINTS.games}/${id}`);
 
@@ -18,7 +20,7 @@ const normalizeData = async (data: FormInterface, id: string, urlAddress: string
     name: data.name,
     img: data.img,
     categories: data.categories
-      ? Object.keys(data.categories).reduce((previous, category) => ({ ...previous, [category]: "true" }), {})
+      ? normilizeGenres(data.categories).reduce((previous, category) => ({ ...previous, [category]: "true" }), {})
       : serverData.categories,
     price: data.price,
     rating: "3",
@@ -31,9 +33,9 @@ const normalizeData = async (data: FormInterface, id: string, urlAddress: string
     age: data.age.replace("+", ""),
   };
 
-  store.dispatch(setGameCard({ ...newData, params: { url: undefined, typeOfEvent: "setCard" } }));
+  store.dispatch(setGameCard({ ...newData, params: { url: undefined, typeOfEvent: SET_CARD } }));
 
-  if (typeOfEvent === "setCard") {
+  if (typeOfEvent === SET_CARD) {
     return postGameCard(newData);
   }
   return editGameCardData(newData, `${MOCK_API_URL}/${urlAddress ? ENDPOINTS.topGames : ENDPOINTS.games}`);

@@ -1,4 +1,5 @@
 @import "../../../../assets/styles/parts/colors";
+@import "../../../../assets/styles/parts/position";
 
 .card {
   position: relative;
@@ -68,17 +69,20 @@
   justify-content: space-around;
 }
 
-.button {
+.nonAdminButtonsContainer {
   display: flex;
-  align-items: center;
   justify-content: center;
+}
+
+.button {
+  @include flexCenter;
   width: 35%;
   padding: 15px;
   border: none;
   border-radius: 20px;
   transition: 0.2s;
   color: $white;
-  background: #562370;
+  background: $purple;
   text-decoration: none;
 }
 
