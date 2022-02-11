@@ -37,12 +37,12 @@ const UserArea = function () {
     <form className={styles.container} onSubmit={handleSubmit(onSubmit)}>
       <div>
         <p className={styles.text}>Username</p>
-        <input type="text" {...register("login")} placeholder={login} className={styles.input} />
+        <input type="text" {...register("login")} defaultValue={login} className={styles.input} />
         <p className={styles.text}>Profile description</p>
         <textarea
           {...register("description")}
           className={`${styles.input} ${styles.textArea}`}
-          placeholder={description}
+          defaultValue={description}
         />
       </div>
       <div className={styles.buttonsContainer}>

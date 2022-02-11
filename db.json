@@ -44,6 +44,108 @@
         "xbox": "true"
       },
       "price": "6.99",
+      "rating": "4",
+      "description": "nice game terraria",
+      "genres": {
+        "survive": "true"
+      },
+      "age": "8"
+    },
+    {
+      "id": "1",
+      "name": "overwatch",
+      "img": "https://upload.wikimedia.org/wikipedia/ru/3/33/Overwatch_Origins_Edition_PC_cover.jpg",
+      "categories": {
+        "pc": "true",
+        "playstation": "true",
+        "xbox": "true"
+      },
+      "price": "24.99",
+      "rating": "5",
+      "description": "nice game overwatch",
+      "genres": {
+        "shooter": "true"
+      },
+      "age": "6"
+    },
+    {
+      "id": "kzfjwgq1",
+      "name": "Dota 2",
+      "img": "https://upload.wikimedia.org/wikipedia/ru/8/8e/%D0%9E%D0%B1%D0%BB%D0%BE%D0%B6%D0%BA%D0%B0_Dota_2.jpg",
+      "categories": {
+        "pc": "true",
+        "playstation": "true",
+        "xbox": "true"
+      },
+      "price": "11.99",
+      "rating": "2",
+      "description": "nice game dota 2",
+      "genres": {
+        "strategy": "true"
+      },
+      "age": "18"
+    },
+    {
+      "id": "kzfk02i1",
+      "name": "terrariaa",
+      "img": "https://s3.gaming-cdn.com/images/products/932/orig/game-steam-terraria-cover.jpg",
+      "categories": {
+        "pc": "true",
+        "playstation": "true",
+        "xbox": "true"
+      },
+      "price": "6.99",
+      "rating": "1",
+      "description": "nice game terraria",
+      "genres": {
+        "survive": "true"
+      },
+      "age": "8"
+    },
+    {
+      "id": "1",
+      "name": "overwatch",
+      "img": "https://upload.wikimedia.org/wikipedia/ru/3/33/Overwatch_Origins_Edition_PC_cover.jpg",
+      "categories": {
+        "pc": "true",
+        "playstation": "true",
+        "xbox": "true"
+      },
+      "price": "24.99",
+      "rating": "3",
+      "description": "nice game overwatch",
+      "genres": {
+        "shooter": "true"
+      },
+      "age": "6"
+    },
+    {
+      "id": "kzfjwgq1",
+      "name": "Dota 2",
+      "img": "https://upload.wikimedia.org/wikipedia/ru/8/8e/%D0%9E%D0%B1%D0%BB%D0%BE%D0%B6%D0%BA%D0%B0_Dota_2.jpg",
+      "categories": {
+        "pc": "true",
+        "playstation": "true",
+        "xbox": "true"
+      },
+      "price": "11.99",
+      "rating": "3",
+      "description": "nice game dota 2",
+      "genres": {
+        "strategy": "true"
+      },
+      "age": "18"
+    },
+    {
+      "id": "kzfk02i1",
+      "name": "terrariaa",
+      "img": "https://s3.gaming-cdn.com/images/products/932/orig/game-steam-terraria-cover.jpg",
+      "categories": {
+        "pc": "true",
+        "playstation": "true",
+        "xbox": "true"
+      },
+      "price": "6.99",
       "rating": "3",
       "description": "nice game terraria",
       "genres": {
@@ -54,16 +156,16 @@
   ],
   "user": [
     {
-      "id": "kzcjaps4",
-      "login": "denisman",
-      "password": "123123",
-      "isAdmin": true
-    },
-    {
       "id": "kzgts154",
       "login": "aboba",
       "password": "123123",
       "isAdmin": false
+    },
+    {
+      "id": "kzcjaps4",
+      "login": "denisman",
+      "password": "123123",
+      "source": "https://upload.wikimedia.org/wikipedia/ru/thumb/c/c8/GTAV_Official_Cover_Art.jpg/274px-GTAV_Official_Cover_Art.jpg"
     }
   ],
   "topgames": [
