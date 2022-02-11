@@ -7,6 +7,7 @@ import closeModal from "@/utils/closeModal";
 import store from "@/redux/store";
 import deleteMockapiData from "@/api/deleteMockapiData";
 import passwordChangeValidation from "@/utils/validators/passwordChangeValidation";
+import { ENDPOINTS } from "@/constants/mockapiURL";
 
 interface DataInterface {
   password: string;
@@ -25,7 +26,7 @@ const PasswordChangeModal = function () {
 
   const onSubmit = (data: DataInterface) => passwordChangeValidation(data);
 
-  deleteMockapiData(id);
+  deleteMockapiData(id, ENDPOINTS.user);
   return (
     <ModalRoot>
       <form onSubmit={handleSubmit(onSubmit)} className="form">

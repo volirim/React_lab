@@ -1,0 +1,96 @@
+@import "../../../assets/styles/parts/colors";
+@import "../../../assets/styles/parts/input";
+@import "../../../assets/styles/parts/position";
+
+.topContainer {
+  width: 100%;
+  padding: 10px 10px 0px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.image {
+  max-width: 250px;
+  width: 100%;
+  height: auto;
+}
+
+.bottomBlock {
+  display: flex;
+  margin: 20px 30px 20px 30px;
+  flex-direction: row;
+}
+
+.formContainer {
+  margin-left: 30px;
+}
+
+.inputContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input {
+  @extend %input-shared;
+  margin: 5px;
+}
+
+.description {
+  height: 150px;
+  margin: 15px;
+  padding: 5px 15px 15px 15px;
+  border-radius: 15px;
+  border: 2px solid $white;
+  background: $black;
+  font-size: 20px;
+  color: $white;
+  resize: none;
+}
+
+.description::-webkit-scrollbar {
+  background: $transpanent;
+  width: 5px;
+  border-radius: 15px;
+}
+
+.description::-webkit-scrollbar-track {
+  background: $transpanent;
+}
+
+.description::-webkit-scrollbar-thumb {
+  border-radius: 15px;
+  background-color: purple;
+}
+
+.description::-webkit-scrollbar-track-piece:end {
+  background: $transpanent;
+  margin-bottom: 10px;
+}
+
+.description::-webkit-scrollbar-track-piece:start {
+  background: $transpanent;
+  margin-top: 10px;
+}
+
+.checkbox {
+  @include checkboxmarginsAndPadding;
+  background: $black;
+  font-size: 20px;
+  color: $white;
+  resize: none;
+  transform: scale(2);
+}
+
+.buttonsBlock {
+  width: 40%;
+  padding-bottom: 15px;
+  display: flex;
+  justify-content: space-around;
+}

@@ -9,6 +9,14 @@
   background: #7c2ba5;
 }
 
+.createGameCardButton {
+  @extend .button;
+  padding: 1px 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .button:hover {
   background: #7c2ba5bb;
 }

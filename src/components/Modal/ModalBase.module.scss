@@ -1,12 +1,12 @@
 @import "../../assets/styles/parts/colors";
+@import "../../assets/styles/parts/input";
 
 .container {
-  position: absolute;
+  position: fixed;
   top: 0;
-  bottom: 0;
-  left: 0;
   right: 0;
-  width: 100%;
+  left: 0;
+  bottom: 0;
   height: 100%;
   overflow-y: unset;
   display: flex;
@@ -75,13 +75,7 @@
 }
 
 .input {
-  margin: 15px;
-  padding: 15px;
-  border-radius: 15px;
-  border: 2px solid $white;
-  background: #121213;
-  font-size: 20px;
-  color: $white;
+  @extend %input-shared;
 }
 
 .input:placeholder-shown {

@@ -11,6 +11,7 @@ import searchReducer from "./search/reducer";
 import SearchStateInterface from "./search/types";
 import profileReducer from "./userProfile/reducer";
 import ProfileStateInterface from "./userProfile/types";
+import gameCardEditor, { InitialStateInterface } from "./gameCardEditor/gameCardEditor";
 
 export interface StoreInterface {
   auth: AuthState;
@@ -19,6 +20,7 @@ export interface StoreInterface {
   search: SearchStateInterface;
   cart: CartState;
   balance: BalanceState;
+  activeGame: InitialStateInterface;
 }
 
 export default combineReducers<StoreInterface>({
@@ -28,4 +30,5 @@ export default combineReducers<StoreInterface>({
   search: searchReducer,
   cart: cartReducer,
   balance: balanceReducer,
+  activeGame: gameCardEditor,
 });

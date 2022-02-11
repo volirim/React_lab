@@ -10,6 +10,7 @@ export const defaultProfileState = {
   id: 1,
   login: "test",
   password: "test",
+  isAdmin: false,
 };
 
 export default function profileReducer(

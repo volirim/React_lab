@@ -1,3 +1,4 @@
+import ChangeGameCardModal from "@/components/modals/ChangeGameCardModal/ChangeGameCardModal";
 import ImageChangeModal from "@/components/modals/ImageChangeModal/ImageChangeModal";
 import PasswordChangeModal from "@/components/modals/PasswordChangeModal/PasswordChangeModal";
 import SignInModal from "@/components/modals/SignInModal/SignInModal";
@@ -14,6 +15,7 @@ const MODAL_LIST: ModalList = {
   logOut: () => <SignOutModal />,
   changePassword: () => <PasswordChangeModal />,
   changeImage: () => <ImageChangeModal />,
+  editGameCard: () => <ChangeGameCardModal />,
   nothing: () => <></>,
 };
 
