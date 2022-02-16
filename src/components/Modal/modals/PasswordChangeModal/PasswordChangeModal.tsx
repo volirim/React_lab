@@ -39,7 +39,7 @@ const PasswordChangeModal = function () {
         <label className="formTitle">Change Password</label>
         <input {...register("password")} placeholder="password" type="text" className={styles.input} />
         <input {...register("passwordConfirm")} placeholder="repeat password" type="text" className={styles.input} />
-        <input type="submit" value="submit" className="submitFormButton" onClick={(e) => hideButton(e)} />
+        <input type="submit" value="submit" className="submitFormButton" onClick={hideButton} />
       </form>
     </ModalRoot>
   );

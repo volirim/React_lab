@@ -8,13 +8,13 @@ const Footer: React.FC = React.memo(() => (
   <footer className={styles.container}>
     <p className={styles.title}>Incredible convenient</p>
     <ul className={styles.imagesBlock}>
-      <a href="https://www.valvesoftware.com" target="blank" className={styles.img}>
+      <a href="https://www.valvesoftware.com" target="blank" rel="nofollow" className={styles.img}>
         <img src={valve} alt="" className={styles.img} />
       </a>
-      <a href="https://www.riotgames.com/en" target="blank" className={styles.img}>
+      <a href="https://www.riotgames.com/en" target="blank" rel="nofollow" className={styles.img}>
         <img src={riotgames} alt="" className={styles.img} />
       </a>
-      <a href="https://www.blizzard.com" target="blank" className={styles.img}>
+      <a href="https://www.blizzard.com" target="blank" rel="nofollow" className={styles.img}>
         <img src={blizzard} alt="" className={styles.img} />
       </a>
     </ul>

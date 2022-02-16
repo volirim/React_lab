@@ -9,11 +9,13 @@ const ModalRoot = function ({ children }: unknown) {
 
   function handleClick(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
     const target = event.target as Element;
-    return target.className === styles.bottomContent && closeModal(search, navigate);
+    if (target.className === styles.bottomContent) {
+      closeModal(search, navigate);
+    }
   }
 
   return ReactDOM.createPortal(
-    <div className={styles.container} onClick={(e) => handleClick(e)}>
+    <div className={styles.container} onClick={handleClick}>
       <div className={styles.bottomContent}>
         <div className={styles.innerContainer}>{children}</div>
       </div>
