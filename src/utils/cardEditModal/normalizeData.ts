@@ -9,11 +9,11 @@ import FormInterface from "@/types/formInterface";
 import GameCardType from "@/types/gameCardType";
 import normilizeGenres from "./normalizeCategories";
 
-const normalizeData = async (data: FormInterface, id: string, urlAddress: string | undefined, typeOfEvent: string) => {
+const normalizeData = async (data: FormInterface, id: string, typeOfEvent: string) => {
   const serverData: GameCardType =
     typeOfEvent === SET_CARD
       ? { genres: { shooter: "true" }, categories: { pc: "true" } }
-      : await getGamesData(`/${urlAddress ? ENDPOINTS.topGames : ENDPOINTS.games}/${id}`);
+      : await getGamesData(`/${ENDPOINTS.games}/${id}`);
 
   const newPrice = data.price.includes(",") ? data.price.replace(",", ".") : data.price;
 

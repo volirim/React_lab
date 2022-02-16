@@ -32,7 +32,7 @@ const ChangeGameCardModal = function () {
 
   const onSubmitHandler = async (data: FormInterface) => {
     const newData = { ...data };
-    await normalizeData(newData, activeGame.id, activeGame.params.url, activeGame.params.typeOfEvent);
+    await normalizeData(newData, activeGame.id, activeGame.params.typeOfEvent);
     dispatch(setGameCard({ ...createGameCardObject(), params: { url: undefined, typeOfEvent: "setCard" } }));
     closeModal(search, navigate);
   };
