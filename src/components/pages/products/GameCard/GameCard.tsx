@@ -1,19 +1,20 @@
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
+import React from "react";
 import styles from "./GameCard.module.scss";
-import GameCardType from "@/types/mockapi";
+import GameCardType from "@/types/gameCardType";
 import Rating from "./Rating";
 import addGameToCart from "@/utils/cart/addGameToCart";
-import { StoreInterface } from "@/redux/modules/reducersCombined";
-import { isAdminSelector } from "@/redux/modules/userProfile/selectors";
-import { setGameCard } from "@/redux/modules/gameCardEditor/gameCardEditor";
+import { StoreInterface } from "@/store/modules/reducersCombined";
+import { isAdminSelector } from "@/store/modules/userProfile/selectors";
+import { setGameCard } from "@/store/modules/gameCardEditor/gameCardEditor";
 
 interface GameCard {
   data: GameCardType;
   urlAddress: string | undefined;
 }
 
-const GameCard = function ({ data, urlAddress }: GameCard) {
+const GameCard = React.memo(({ data, urlAddress }: GameCard) => {
   const store = useSelector((state: StoreInterface) => state);
   const isAdmin = isAdminSelector(store);
   const dispatch = useDispatch();
@@ -23,7 +24,7 @@ const GameCard = function ({ data, urlAddress }: GameCard) {
       <div className={styles.side}>
         <img src={data.img} alt="overwatch" className={styles.image} />
         <div className={styles.front}>
-          <div>{data.name.toUpperCase()}</div>
+          <div className={styles.cardName}>{data.name.toUpperCase()}</div>
           <div>{data.price[0] === "0" ? data.price.slice(1) : data.price}$</div>
         </div>
         <div className={styles.categories}>{Object.keys(data.categories).join(", ")}</div>
@@ -31,7 +32,7 @@ const GameCard = function ({ data, urlAddress }: GameCard) {
         <Rating rating={data.rating} />
       </div>
       <div className={`${styles.side} ${styles.back}`}>
-        <div>{data.description}</div>
+        <div className={styles.descriptionText}>{data.description}</div>
         <div className={isAdmin ? styles.buttonsContainer : styles.nonAdminButtonsContainer}>
           <button className={styles.button} type="button" onClick={() => addGameToCart(data.name, data.categories)}>
             Add to cart
@@ -49,6 +50,6 @@ const GameCard = function ({ data, urlAddress }: GameCard) {
       </div>
     </div>
   );
-};
+});
 
 export default GameCard;

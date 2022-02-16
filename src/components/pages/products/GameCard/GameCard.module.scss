@@ -45,6 +45,10 @@
   flex-wrap: wrap;
 }
 
+.cardName {
+  word-break: break-all;
+}
+
 .categories {
   padding: 0 0 0 20px;
 }
@@ -57,11 +61,16 @@
 .back {
   position: absolute;
   top: 0;
+  word-wrap: break-word;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   transform: rotateY(180deg);
+}
+
+.descriptionText {
+  word-break: break-all;
 }
 
 .buttonsContainer {

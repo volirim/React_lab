@@ -10,13 +10,12 @@ interface State {
 }
 
 class ErrorBoundary extends Component<Props, State> {
-  // eslint-disable-next-line react/state-in-constructor
-  public state: State = {
-    hasError: false,
-  };
+  constructor(props: Props | Readonly<Props>) {
+    super(props);
+    this.state = { hasError: false };
+  }
 
-  public static getDerivedStateFromError(_: Error): State {
-    // Update state so the next render will show the fallback UI.
+  public static getDerivedStateFromError(): State {
     return { hasError: true };
   }
 

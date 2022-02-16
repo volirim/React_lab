@@ -1,5 +1,5 @@
 import uniqID from "uniqid";
-import GameCardType from "@/types/mockapi";
+import GameCardType from "@/types/gameCardType";
 
 const createGameCardObject = (): GameCardType => {
   const id = uniqID();
@@ -11,7 +11,7 @@ const createGameCardObject = (): GameCardType => {
       playstation: undefined,
       xbox: undefined,
     },
-    description: "nice game overwatch",
+    description: "",
     genres: {
       shooter: "true",
     },

@@ -3,11 +3,11 @@ import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./UserImage.module.scss";
 import getProfileImage from "@/utils/getProfileImage";
-import checkProfileAction from "@/redux/modules/userProfile/actionCreate";
-import { StoreInterface } from "@/redux/modules/reducersCombined";
+import checkProfileAction from "@/store/modules/userProfile/actionCreate";
+import { profileSelector } from "@/store/modules/userProfile/selectors";
 
 const ProfileImage = function () {
-  const { id, login, password, isAdmin, source } = useSelector((state: StoreInterface) => state.profile);
+  const { id, login, password, isAdmin, source } = useSelector(profileSelector);
   const dispatch = useDispatch();
 
   useEffect(() => {

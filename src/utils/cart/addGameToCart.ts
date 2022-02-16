@@ -1,7 +1,7 @@
 import uniqID from "uniqid";
 import getGamesData from "@/api/getMockapiData";
-import { checkChangeCartAction, checkClearCartAction, checkSetCartAction } from "@/redux/modules/cart/actionCreate";
-import store from "@/redux/store";
+import { checkChangeCartAction, checkClearCartAction, checkSetCartAction } from "@/store/modules/cart/actionCreate";
+import store from "@/store/store";
 import CartItemType from "@/types/cartItemType";
 
 interface CategoriesInterface {

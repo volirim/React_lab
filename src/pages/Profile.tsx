@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { StoreInterface } from "@/redux/modules/reducersCombined";
+import { StoreInterface } from "@/store/modules/reducersCombined";
 import classes from "../components/pages/products/Categories/Categories.module.scss";
 import UserArea from "../components/pages/profile/UserArea";
 import ProfileImage from "../components/pages/profile/UserImage";

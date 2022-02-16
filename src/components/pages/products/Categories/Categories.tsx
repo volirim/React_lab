@@ -11,7 +11,7 @@ const CategoriesBlock = function () {
       </div>
       <div className={styles.bottom}>
         {SUB_MENU.map((el) => (
-          <NavLink to={el.path} className={styles.category}>
+          <NavLink to={el.path} key={el.id} className={styles.category}>
             {el.name.toUpperCase()}
           </NavLink>
         ))}

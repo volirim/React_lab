@@ -1,4 +1,5 @@
 interface ItemInterface {
+  id: string;
   name: string;
   path: string;
   isModal?: boolean;

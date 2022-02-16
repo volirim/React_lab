@@ -18,42 +18,8 @@
       "age": "6"
     },
     {
-      "id": "kzfjwgq1",
-      "name": "Dota 2",
-      "img": "https://upload.wikimedia.org/wikipedia/ru/8/8e/%D0%9E%D0%B1%D0%BB%D0%BE%D0%B6%D0%BA%D0%B0_Dota_2.jpg",
-      "categories": {
-        "pc": "true",
-        "playstation": "true",
-        "xbox": "true"
-      },
-      "price": "11.99",
-      "rating": "3",
-      "description": "nice game dota 2",
-      "genres": {
-        "strategy": "true"
-      },
-      "age": "18"
-    },
-    {
-      "id": "kzfk02i1",
-      "name": "terrariaa",
-      "img": "https://s3.gaming-cdn.com/images/products/932/orig/game-steam-terraria-cover.jpg",
-      "categories": {
-        "pc": "true",
-        "playstation": "true",
-        "xbox": "true"
-      },
-      "price": "6.99",
-      "rating": "4",
-      "description": "nice game terraria",
-      "genres": {
-        "survive": "true"
-      },
-      "age": "8"
-    },
-    {
-      "id": "1",
-      "name": "overwatch",
+      "id": "2",
+      "name": "overwatchasassaassasasa",
       "img": "https://upload.wikimedia.org/wikipedia/ru/3/33/Overwatch_Origins_Edition_PC_cover.jpg",
       "categories": {
         "pc": "true",
@@ -61,15 +27,15 @@
         "xbox": "true"
       },
       "price": "24.99",
-      "rating": "5",
-      "description": "nice game overwatch",
+      "rating": "3",
+      "description": "nice game overwatchasfasfsafsafasfasffsa",
       "genres": {
         "shooter": "true"
       },
       "age": "6"
     },
     {
-      "id": "kzfjwgq1",
+      "id": "kzfjwggq1",
       "name": "Dota 2",
       "img": "https://upload.wikimedia.org/wikipedia/ru/8/8e/%D0%9E%D0%B1%D0%BB%D0%BE%D0%B6%D0%BA%D0%B0_Dota_2.jpg",
       "categories": {
@@ -86,7 +52,7 @@
       "age": "18"
     },
     {
-      "id": "kzfk02i1",
+      "id": "kzfk02ai1",
       "name": "terrariaa",
       "img": "https://s3.gaming-cdn.com/images/products/932/orig/game-steam-terraria-cover.jpg",
       "categories": {
@@ -103,7 +69,7 @@
       "age": "8"
     },
     {
-      "id": "1",
+      "id": "13",
       "name": "overwatch",
       "img": "https://upload.wikimedia.org/wikipedia/ru/3/33/Overwatch_Origins_Edition_PC_cover.jpg",
       "categories": {
@@ -120,7 +86,7 @@
       "age": "6"
     },
     {
-      "id": "kzfjwgq1",
+      "id": "kzfjwgwq1",
       "name": "Dota 2",
       "img": "https://upload.wikimedia.org/wikipedia/ru/8/8e/%D0%9E%D0%B1%D0%BB%D0%BE%D0%B6%D0%BA%D0%B0_Dota_2.jpg",
       "categories": {
@@ -137,7 +103,7 @@
       "age": "18"
     },
     {
-      "id": "kzfk02i1",
+      "id": "kzfk02igh1",
       "name": "terrariaa",
       "img": "https://s3.gaming-cdn.com/images/products/932/orig/game-steam-terraria-cover.jpg",
       "categories": {
@@ -152,6 +118,71 @@
         "survive": "true"
       },
       "age": "8"
+    },
+    {
+      "id": "kzo6cvbr",
+      "name": "minecraft",
+      "img": "",
+      "categories": {},
+      "price": "11.53",
+      "rating": "3",
+      "description": "nice game overwatch",
+      "genres": {
+        "shooter": "true"
+      },
+      "age": "3"
+    },
+    {
+      "id": "kzo6d493",
+      "name": "asad",
+      "img": "",
+      "categories": {},
+      "price": "25.99",
+      "rating": "3",
+      "description": "nice game overwatch",
+      "genres": {
+        "shooter": "true"
+      },
+      "age": "3"
+    },
+    {
+      "id": "kzo6eah2",
+      "name": "asdf",
+      "img": "https://upload.wikimedia.org/wikipedia/ru/8/8e/%D0%9E%D0%B1%D0%BB%D0%BE%D0%B6%D0%BA%D0%B0_Dota_2.jpg",
+      "categories": {},
+      "price": "6.99",
+      "rating": "3",
+      "description": "nice game overwatch",
+      "genres": {
+        "shooter": "true"
+      },
+      "age": "6"
+    },
+    {
+      "id": "kzo84pfn",
+      "name": "фм",
+      "img": "",
+      "categories": {},
+      "price": "25.99",
+      "rating": "3",
+      "description": "nice game overwatch",
+      "genres": {
+        "shooter": "true"
+      },
+      "age": "3"
+    },
+    {
+      "id": "kzpfsi4t",
+      "name": "minecraft",
+      "img": "",
+      "categories": {},
+      "price": "6.99",
+      "rating": "3",
+      "description": "nice game overwatch",
+      "genres": {
+        "shooter": "true"
+      },
+      "age": "3"
     }
   ],
   "user": [
@@ -159,13 +190,13 @@
       "id": "kzgts154",
       "login": "aboba",
       "password": "123123",
-      "isAdmin": false
+      "isAdmin": true
     },
     {
       "id": "kzcjaps4",
       "login": "denisman",
       "password": "123123",
-      "source": "https://upload.wikimedia.org/wikipedia/ru/thumb/c/c8/GTAV_Official_Cover_Art.jpg/274px-GTAV_Official_Cover_Art.jpg"
+      "source": "https://upload.wikimedia.org/wikipedia/ru/thumb/8/8e/%D0%9E%D0%B1%D0%BB%D0%BE%D0%B6%D0%BA%D0%B0_Dota_2.jpg/266px-%D0%9E%D0%B1%D0%BB%D0%BE%D0%B6%D0%BA%D0%B0_Dota_2.jpg"
     }
   ],
   "topgames": [
@@ -223,7 +254,7 @@
     {
       "id": "kzcjaps4",
       "login": "denisman",
-      "balance": "4000",
+      "balance": "3976.02",
       "isAdmin": false
     },
     {

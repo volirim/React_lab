@@ -1,8 +1,7 @@
-import { SetStateAction } from "react";
 import getGamesData from "@/api/getMockapiData";
-import store from "@/redux/store";
+import store from "@/store/store";
 
-const validateArray = async (updateGamesList: (value: SetStateAction<never[]>) => void, urlAdress?: string) => {
+const validateArray = async (urlAdress?: string) => {
   const { genres, age, rating, priceFrom, priceTo } = store.getState().filters;
   const { games } = store.getState().search;
   const name = store.getState().search.games;
@@ -30,21 +29,15 @@ const validateArray = async (updateGamesList: (value: SetStateAction<never[]>) =
 
   if (!urlAdress) {
     const gamesArray = await getGamesData(genres || age || rating || priceFrom || priceTo || name ? url : "/games");
-    updateGamesList(gamesArray);
     return gamesArray;
   }
 
-  const topGamesArray =
-    games.length === 0 ? await getGamesData(`/games?_sort=rating`) : await getGamesData(`/games?name_like=${games}`);
-
   if (games.length === 0) {
-    updateGamesList(topGamesArray.slice(-3));
+    const topGamesArray = await getGamesData(`/games?_sort=rating`);
     return topGamesArray.slice(-3);
   }
-  console.log(topGamesArray, games);
 
-  updateGamesList(topGamesArray);
-
+  const topGamesArray = await getGamesData(`/games?name_like=${games}`);
   return topGamesArray;
 };
 

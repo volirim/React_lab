@@ -1,4 +1,5 @@
-import Line from "@/components/Line/Line";
+import React from "react";
+import Line from "@/components/UI/Line/Line";
 import styles from "./FilterMenu.module.scss";
 import FilterCheckbox from "../FilterCheckbox/FilterCheckbox";
 
@@ -14,18 +15,16 @@ interface FilterMenuInterface {
   checkActionCallback: (actionPayload: string) => reduxCallbackInterface;
 }
 
-const FilterMenu = function ({ title, storeInfo, menuArray, checkActionCallback }: FilterMenuInterface) {
-  return (
-    <>
-      <h4 className={styles.title}>{title}</h4>
-      <Line styleList="line" />
-      <form className={styles.form}>
-        {menuArray.map((el) => (
-          <FilterCheckbox genre={storeInfo} reduxCallback={checkActionCallback} name={el.name} />
-        ))}
-      </form>
-    </>
-  );
-};
+const FilterMenu = React.memo(({ title, storeInfo, menuArray, checkActionCallback }: FilterMenuInterface) => (
+  <>
+    <h4 className={styles.title}>{title}</h4>
+    <Line styleList="line" />
+    <form className={styles.form}>
+      {menuArray.map((el) => (
+        <FilterCheckbox genre={storeInfo} key={el.key} reduxCallback={checkActionCallback} name={el.name} />
+      ))}
+    </form>
+  </>
+));
 
 export default FilterMenu;

@@ -1,5 +1,5 @@
-import checkProfileAction from "@/redux/modules/userProfile/actionCreate";
-import store from "@/redux/store";
+import checkProfileAction from "@/store/modules/userProfile/actionCreate";
+import store from "@/store/store";
 import { UserLoginInterface, UserServerInterface } from "@/types/userData";
 
 const loginValidation = (data: UserLoginInterface, response: UserServerInterface[]) => {

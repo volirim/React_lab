@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import uniqID from "uniqid";
 import styles from "./PlatformMenu.module.scss";
-import { checkChangePlatformAction } from "@/redux/modules/cart/actionCreate";
+import { checkChangePlatformAction } from "@/store/modules/cart/actionCreate";
 import getGamesData from "@/api/getMockapiData";
-import { activePlatformSelector } from "@/redux/modules/cart/selectors";
-import store from "@/redux/store";
+import { activePlatformSelector } from "@/store/modules/cart/selectors";
+import store from "@/store/store";
 
 interface PlatformMenuInterface {
   name: string;
