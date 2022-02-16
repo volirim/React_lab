@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import Loader from "@/components/Search/Loader/Loader";
+import Loader from "@/components/UI/Search/Loader/Loader";
 import debounce from "@/utils/debounce";
-import { StoreInterface } from "@/redux/modules/reducersCombined";
+import { StoreInterface } from "@/store/modules/reducersCombined";
 
 const useLoader = (styleShown: string, styleHidden: string, reactComponent: JSX.Element[]) => {
   const [display, setDisplay] = useState(true);

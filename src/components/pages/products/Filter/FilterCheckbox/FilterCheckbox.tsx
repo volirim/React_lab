@@ -1,3 +1,4 @@
+import React from "react";
 import { useDispatch } from "react-redux";
 import styles from "./FilterCheckbox.module.scss";
 
@@ -12,7 +13,7 @@ interface FilterCheckboxInterface {
   name: string;
 }
 
-const FilterCheckbox = function ({ genre, reduxCallback, name }: FilterCheckboxInterface) {
+const FilterCheckbox = React.memo(({ genre, reduxCallback, name }: FilterCheckboxInterface) => {
   const dispatch = useDispatch();
   return (
     <div className={styles.formItem}>
@@ -20,6 +21,6 @@ const FilterCheckbox = function ({ genre, reduxCallback, name }: FilterCheckboxI
       <h5>{name === "" ? "All" : name}</h5>
     </div>
   );
-};
+});
 
 export default FilterCheckbox;

@@ -1,12 +1,12 @@
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import Search from "../components/Search/Search";
+import Search from "../components/UI/Search/Search";
 import GameCardsBlock from "../components/pages/products/GameCardsBlock/GameCardsBlock";
 import styles from "./Products.module.scss";
 import FilterBlock from "@/components/pages/products/Filter/FilterBlock/FilterBlock";
-import { StoreInterface } from "@/redux/modules/reducersCombined";
-import { isAdminSelector } from "../redux/modules/userProfile/selectors";
+import { StoreInterface } from "@/store/modules/reducersCombined";
+import { isAdminSelector } from "../store/modules/userProfile/selectors";
 
 const Products: React.FC = function () {
   const { platform } = useParams();
@@ -15,7 +15,7 @@ const Products: React.FC = function () {
 
   return (
     <div className={styles.mainContainer}>
-      <FilterBlock />
+      <FilterBlock category={platform} />
       <div className={styles.gamesBlock}>
         <div className={styles.searchBlock}>
           <Search category={platform} url="/games" />

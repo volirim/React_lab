@@ -1,5 +1,5 @@
-import checkProfileAction from "@/redux/modules/userProfile/actionCreate";
-import store from "@/redux/store";
+import checkProfileAction from "@/store/modules/userProfile/actionCreate";
+import store from "@/store/store";
 
 interface ProfileInterface {
   id: number;

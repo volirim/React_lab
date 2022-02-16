@@ -1,11 +1,11 @@
 import { useSelector } from "react-redux";
-import Line from "@/components/Line/Line";
+import Line from "@/components/UI/Line/Line";
 import CartBalance from "@/components/pages/cart/CartBalance/CartBalance";
 import CartItem from "@/components/pages/cart/CartItem/CartItem";
 import styles from "./Cart.module.scss";
 import CartItemType from "@/types/cartItemType";
-import { StoreInterface } from "@/redux/modules/reducersCombined";
-import { cartSelector } from "@/redux/modules/cart/selectors";
+import { StoreInterface } from "@/store/modules/reducersCombined";
+import { cartSelector } from "@/store/modules/cart/selectors";
 
 const Cart = function () {
   const store = useSelector((state: StoreInterface) => state);

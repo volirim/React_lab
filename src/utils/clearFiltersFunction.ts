@@ -1,6 +1,6 @@
-import { checkClearAction } from "@/redux/modules/filters/actionCreate";
-import checkSearchAction from "@/redux/modules/search/actionCreate";
-import store from "@/redux/store";
+import { checkClearAction } from "@/store/modules/filters/actionCreate";
+import checkSearchAction from "@/store/modules/search/actionCreate";
+import store from "@/store/store";
 
 const clearFiltersFunction = () => {
   store.dispatch(checkSearchAction(""));

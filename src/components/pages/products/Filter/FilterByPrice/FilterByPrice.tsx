@@ -1,10 +1,10 @@
 import { useDispatch } from "react-redux";
-import { ChangeEvent } from "react";
-import Line from "@/components/Line/Line";
+import React, { ChangeEvent } from "react";
+import Line from "@/components/UI/Line/Line";
 import styles from "./FilterByPrice.module.scss";
-import { checkPriceFromAction, checkPriceToAction } from "@/redux/modules/filters/actionCreate";
+import { checkPriceFromAction, checkPriceToAction } from "@/store/modules/filters/actionCreate";
 
-const FilterByPrice = function () {
+const FilterByPrice = React.memo(() => {
   const dispatch = useDispatch();
 
   const onChangeFromFunc = (e: ChangeEvent<HTMLInputElement>) => dispatch(checkPriceFromAction(e.target.value));
@@ -20,6 +20,6 @@ const FilterByPrice = function () {
       <input type="text" className={styles.input} onChange={(e) => onChangeToFunc(e)} />
     </>
   );
-};
+});
 
 export default FilterByPrice;

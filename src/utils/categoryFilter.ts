@@ -1,4 +1,4 @@
-import GameCardType from "../types/mockapi";
+import GameCardType from "../types/gameCardType";
 
 const filterCategories = (cards: GameCardType[], category: string | undefined) => {
   if (category) {

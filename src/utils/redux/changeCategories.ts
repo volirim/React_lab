@@ -1,4 +1,4 @@
-import CartState from "@/redux/modules/cart/types";
+import CartState from "@/store/modules/cart/types";
 import CartItemType from "@/types/cartItemType";
 
 interface CartAction {

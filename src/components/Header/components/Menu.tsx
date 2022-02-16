@@ -1,9 +1,11 @@
+import React from "react";
 import MenuInterface from "@/types/menuInterface";
 import classes from "./Menu.module.scss";
 import MenuElement from "./MenuElement";
 
-const NavMenu = function ({ menu, root = true }: MenuInterface) {
+const NavMenu = React.memo(({ menu, root = true }: MenuInterface) => {
   const classesList = [classes.menu, root ? classes.menuRoot : classes.menuSub].join(" ");
+
   return (
     <ul className={classesList}>
       {menu.map((item) => (
@@ -11,6 +13,6 @@ const NavMenu = function ({ menu, root = true }: MenuInterface) {
       ))}
     </ul>
   );
-};
+});
 
 export default NavMenu;

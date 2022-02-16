@@ -1,19 +1,18 @@
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import getGamesData from "@/api/getMockapiData";
 import styles from "./CartBalance.module.scss";
 import getFullPrice from "@/utils/cart/getFullPrice";
 import changeCartData from "@/api/changeCartData";
-import { checkClearCartAction } from "@/redux/modules/cart/actionCreate";
+import { checkClearCartAction } from "@/store/modules/cart/actionCreate";
 import beautifyPrice from "@/utils/cart/priceBeautifier";
-import { cartSelector } from "@/redux/modules/cart/selectors";
-import store from "@/redux/store";
-import { userIdSelector } from "@/redux/modules/userProfile/selectors";
+import { cartSelector } from "@/store/modules/cart/selectors";
+import { userIdSelector } from "@/store/modules/userProfile/selectors";
 
 const CartBalance = function () {
   const dispatch = useDispatch();
-  const cart = cartSelector(store.getState());
-  const userName = userIdSelector(store.getState());
+  const cart = useSelector(cartSelector);
+  const userName = useSelector(userIdSelector);
 
   const [userData, setUserData] = useState({ id: "0", name: "none", balance: "0" });
   const [balance, setBalance] = useState("");

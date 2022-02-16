@@ -1,5 +1,5 @@
-import { checkChangeCartAction, checkClearCartAction } from "@/redux/modules/cart/actionCreate";
-import store from "@/redux/store";
+import { checkChangeCartAction, checkClearCartAction } from "@/store/modules/cart/actionCreate";
+import store from "@/store/store";
 
 function deleteGameCard(name: string) {
   const gamesList = store.getState().cart.cart;

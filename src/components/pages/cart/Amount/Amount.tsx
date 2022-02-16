@@ -1,18 +1,20 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import React from "react";
 import styles from "./Amount.module.scss";
-import { checkChangeCartAction, checkClearCartAction } from "@/redux/modules/cart/actionCreate";
+import { checkChangeCartAction, checkClearCartAction } from "@/store/modules/cart/actionCreate";
 import calculateItemsAmount from "@/utils/cart/calculateItemsAmount";
-import { cartCurrentGameSelector, cartSelector } from "@/redux/modules/cart/selectors";
-import store from "@/redux/store";
+import { cartCurrentGameSelector, cartSelector } from "@/store/modules/cart/selectors";
+import { StoreInterface } from "@/store/modules/reducersCombined";
 
 interface AmountInterface {
   name: string;
 }
 
-const Amount = function ({ name }: AmountInterface) {
+const Amount = React.memo(({ name }: AmountInterface) => {
   const dispatch = useDispatch();
-  const games = cartSelector(store.getState());
-  const currentGame = cartCurrentGameSelector(store.getState())(name);
+  const store = useSelector((state: StoreInterface) => state);
+  const games = useSelector(cartSelector);
+  const currentGame = cartCurrentGameSelector(store)(name);
 
   const onClickHandler = (increase: boolean) => {
     dispatch(checkClearCartAction());
@@ -32,6 +34,6 @@ const Amount = function ({ name }: AmountInterface) {
       </div>
     </div>
   );
-};
+});
 
 export default Amount;

@@ -2,11 +2,11 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useSelector } from "react-redux";
-import store from "@/redux/store";
+import store from "@/store/store";
 import styles from "./UserArea.module.scss";
 import loginChangeValidation from "@/utils/validators/loginChangeValidation";
-import checkProfileAction from "@/redux/modules/userProfile/actionCreate";
-import { StoreInterface } from "@/redux/modules/reducersCombined";
+import checkProfileAction from "@/store/modules/userProfile/actionCreate";
+import { profileSelector } from "@/store/modules/userProfile/selectors";
 
 interface DataInterface {
   login: string;
@@ -15,7 +15,7 @@ interface DataInterface {
 
 const UserArea = function () {
   const { register, handleSubmit } = useForm();
-  const { login, description, id, password, isAdmin } = useSelector((state: StoreInterface) => state.profile);
+  const { login, description, id, password, isAdmin } = useSelector(profileSelector);
 
   const [url, setUrl] = useState("");
   window.onhashchange = () => setUrl(window.location.pathname);

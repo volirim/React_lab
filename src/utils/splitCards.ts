@@ -1,5 +1,5 @@
 import getGamesData from "@/api/getMockapiData";
-import GameCardType from "@/types/mockapi";
+import GameCardType from "@/types/gameCardType";
 
 const splitCards = async (name: string, category?: string | undefined) => {
   const cards: GameCardType[] = await getGamesData("/games");
