@@ -1,0 +1,19 @@
+@import "../../assets/styles/parts/colors";
+
+.topBlock {
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  margin-bottom: 10px;
+  font-size: 30px;
+  color: $white;
+}
+
+.bottomBlock {
+  display: flex;
+  flex-direction: row;
+  margin-left: 40px;
+}

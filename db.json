@@ -1,0 +1,215 @@
+{
+  "games": [
+    {
+      "id": "1",
+      "name": "overwatch",
+      "img": "https://upload.wikimedia.org/wikipedia/ru/3/33/Overwatch_Origins_Edition_PC_cover.jpg",
+      "categories": {
+        "pc": "true",
+        "playstation": "true",
+        "xbox": "true"
+      },
+      "price": "24.99",
+      "rating": "3",
+      "description": "nice game overwatch",
+      "genres": {
+        "shooter": "true"
+      },
+      "age": "6"
+    },
+    {
+      "id": "2",
+      "name": "overwatchasassaassasasa",
+      "img": "https://upload.wikimedia.org/wikipedia/ru/3/33/Overwatch_Origins_Edition_PC_cover.jpg",
+      "categories": {
+        "pc": "true",
+        "playstation": "true",
+        "xbox": "true"
+      },
+      "price": "24.99",
+      "rating": "3",
+      "description": "nice game overwatchasfasfsafsafasfasffsa",
+      "genres": {
+        "shooter": "true"
+      },
+      "age": "6"
+    },
+    {
+      "id": "kzfjwggq1",
+      "name": "Dota 2",
+      "img": "https://upload.wikimedia.org/wikipedia/ru/8/8e/%D0%9E%D0%B1%D0%BB%D0%BE%D0%B6%D0%BA%D0%B0_Dota_2.jpg",
+      "categories": {
+        "pc": "true",
+        "playstation": "true",
+        "xbox": "true"
+      },
+      "price": "11.99",
+      "rating": "2",
+      "description": "nice game dota 2",
+      "genres": {
+        "strategy": "true"
+      },
+      "age": "18"
+    },
+    {
+      "id": "kzfk02ai1",
+      "name": "terrariaa",
+      "img": "https://s3.gaming-cdn.com/images/products/932/orig/game-steam-terraria-cover.jpg",
+      "categories": {
+        "pc": "true",
+        "playstation": "true",
+        "xbox": "true"
+      },
+      "price": "6.99",
+      "rating": "1",
+      "description": "nice game terraria",
+      "genres": {
+        "survive": "true"
+      },
+      "age": "8"
+    },
+    {
+      "id": "13",
+      "name": "overwatch",
+      "img": "https://upload.wikimedia.org/wikipedia/ru/3/33/Overwatch_Origins_Edition_PC_cover.jpg",
+      "categories": {
+        "pc": "true",
+        "playstation": "true",
+        "xbox": "true"
+      },
+      "price": "24.99",
+      "rating": "3",
+      "description": "nice game overwatch",
+      "genres": {
+        "shooter": "true"
+      },
+      "age": "6"
+    },
+    {
+      "id": "kzfjwgwq1",
+      "name": "Dota 2",
+      "img": "https://upload.wikimedia.org/wikipedia/ru/8/8e/%D0%9E%D0%B1%D0%BB%D0%BE%D0%B6%D0%BA%D0%B0_Dota_2.jpg",
+      "categories": {
+        "pc": "true",
+        "playstation": "true",
+        "xbox": "true"
+      },
+      "price": "11.99",
+      "rating": "3",
+      "description": "nice game dota 2",
+      "genres": {
+        "strategy": "true"
+      },
+      "age": "18"
+    },
+    {
+      "id": "kzfk02igh1",
+      "name": "terrariaa",
+      "img": "https://s3.gaming-cdn.com/images/products/932/orig/game-steam-terraria-cover.jpg",
+      "categories": {
+        "pc": "true",
+        "playstation": "true",
+        "xbox": "true"
+      },
+      "price": "6.99",
+      "rating": "3",
+      "description": "nice game terraria",
+      "genres": {
+        "survive": "true"
+      },
+      "age": "8"
+    }
+  ],
+  "user": [
+    {
+      "id": "kzsdw9in",
+      "login": "aboba",
+      "password": "123123",
+      "isAdmin": false
+    },
+    {
+      "id": "kzse3m05",
+      "login": "denisman",
+      "password": "123123",
+      "description": "Ya debil",
+      "isAdmin": true,
+      "source": "https://avatars.mds.yandex.net/i?id=d432adecf5a1903c3ebaf6a88df067e0-5495958-images-thumbs&n=13"
+    },
+    {
+      "id": "kzsf8q37",
+      "login": "aaaaaaa",
+      "password": "123123",
+      "isAdmin": false
+    },
+    {
+      "id": "kzsf39uh",
+      "login": "volirim",
+      "source": "https://avatars.mds.yandex.net/i?id=d432adecf5a1903c3ebaf6a88df067e0-5495958-images-thumbs&n=13",
+      "password": "12312322",
+      "isAdmin": false
+    }
+  ],
+  "topgames": [],
+  "cart": [
+    {
+      "id": "kzcjaps4",
+      "login": "denisman",
+      "balance": "3976.02",
+      "isAdmin": false
+    },
+    {
+      "id": "kzgts154",
+      "login": "aboba",
+      "balance": "4000",
+      "isAdmin": false
+    },
+    {
+      "id": "kzsdtknk",
+      "login": "aboba",
+      "balance": "4000",
+      "isAdmin": false
+    },
+    {
+      "id": "kzsdub5l",
+      "login": "aboba",
+      "balance": "4000",
+      "isAdmin": false
+    },
+    {
+      "id": "kzsdvb2k",
+      "login": "aboba",
+      "balance": "4000",
+      "isAdmin": false
+    },
+    {
+      "id": "kzsdw9in",
+      "login": "aboba",
+      "balance": "4000",
+      "isAdmin": false
+    },
+    {
+      "id": "kzsdwey1",
+      "login": "denisman",
+      "balance": "4000",
+      "isAdmin": false
+    },
+    {
+      "id": "kzse3m05",
+      "login": "denisman",
+      "balance": "4000",
+      "isAdmin": false
+    },
+    {
+      "id": "kzsf39uh",
+      "login": "volirim",
+      "balance": "4000",
+      "isAdmin": false
+    },
+    {
+      "id": "kzsf8q37",
+      "login": "aaaaaaa",
+      "balance": "4000",
+      "isAdmin": false
+    }
+  ]
+}

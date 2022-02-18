@@ -1,0 +1,41 @@
+@import "../../assets/styles/parts/colors";
+
+.container {
+  padding: 40px 0;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $black;
+}
+
+.title {
+  font-size: 22pt;
+  font-weight: bold;
+  margin-left: 5%;
+  color: $white;
+  background-color: $black;
+}
+
+.imagesBlock {
+  width: 35em;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.img {
+  width: 100%;
+  max-width: 150px;
+  max-height: 47.7px;
+  transition: 0.2s;
+}
+
+.img:hover {
+  max-width: 130px;
+  transition: 0.2s;
+}
+
+.img:active {
+  max-width: 170px;
+}
