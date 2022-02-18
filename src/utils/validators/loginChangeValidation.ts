@@ -8,12 +8,16 @@ interface DataInterface {
   description: string;
 }
 
-async function loginChangeValidation(data: DataInterface) {
+async function loginChangeValidation(data: DataInterface, id: number) {
   const serverData = await getGamesData("/user");
 
   const filteredData = await serverData.filter((element: UserServerInterface) => element.login === data.login);
+  const sameUserLogin = await serverData.find((element: UserServerInterface) => element.id === id);
 
-  if (!filteredData.length && /^[a-z0-9_-]{3,16}$/.test(data.login.toLowerCase())) {
+  if (
+    (!filteredData.length || sameUserLogin.login === data.login) &&
+    /^[a-z0-9_-]{3,16}$/.test(data.login.toLowerCase())
+  ) {
     alert("Смена данных произошла успешно");
     return changeMockapiData(await changeMockapiLogin(data));
   }

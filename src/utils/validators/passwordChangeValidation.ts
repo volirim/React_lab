@@ -8,9 +8,6 @@ interface DataInterface {
 
 async function passwordChangeValidation(data: DataInterface) {
   if (data.password === data.passwordConfirm && /^[a-z0-9]{3,16}$/.test(data.password.toLowerCase())) {
-    alert("Смена данных произошла успешно");
-    console.log(data);
-
     return changeMockapiData(await changeMockapiPassword(data));
   }
   return alert("Введите другой пароль");

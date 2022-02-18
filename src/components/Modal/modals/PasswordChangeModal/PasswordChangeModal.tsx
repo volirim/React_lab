@@ -22,7 +22,15 @@ const PasswordChangeModal = function () {
     closeModal(search, navigate);
   };
 
-  const onSubmit = (data: DataInterface) => passwordChangeValidation(data);
+  const onSubmit = async (data: DataInterface) => {
+    const result = await passwordChangeValidation(data);
+    if (result) {
+      alert("Смена данных произошла успешно");
+      closeModal(search, navigate);
+    } else {
+      alert("Что-то пошло не так");
+    }
+  };
 
   return (
     <ModalRoot>
